@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const products = [
   {
@@ -9,8 +10,7 @@ const products = [
     price: "$98",
     category: "Swimwear",
     tag: "New",
-    bg: "linear-gradient(160deg, #C9B5A8 0%, #B8A090 100%)",
-    size: "tall",
+    bg: "linear-gradient(160deg, #c9b5a8 0%, #b8a090 100%)",
   },
   {
     id: 2,
@@ -18,8 +18,7 @@ const products = [
     price: "$82",
     category: "Swimwear",
     tag: null,
-    bg: "linear-gradient(160deg, #B2BDB8 0%, #A0ADA7 100%)",
-    size: "standard",
+    bg: "linear-gradient(160deg, #b2bdb8 0%, #a0ada7 100%)",
   },
   {
     id: 3,
@@ -27,8 +26,7 @@ const products = [
     price: "$245",
     category: "Resort Wear",
     tag: "Bestseller",
-    bg: "linear-gradient(160deg, #D4C5AF 0%, #C4B49C 100%)",
-    size: "standard",
+    bg: "linear-gradient(160deg, #d4c5af 0%, #c4b49c 100%)",
   },
   {
     id: 4,
@@ -36,8 +34,7 @@ const products = [
     price: "$185",
     category: "Dresses",
     tag: "New",
-    bg: "linear-gradient(160deg, #C8AFA4 0%, #B89888 100%)",
-    size: "tall",
+    bg: "linear-gradient(160deg, #c8afa4 0%, #b89888 100%)",
   },
   {
     id: 5,
@@ -45,8 +42,7 @@ const products = [
     price: "$165",
     category: "Swimwear",
     tag: null,
-    bg: "linear-gradient(160deg, #9EB0AA 0%, #8AA09A 100%)",
-    size: "standard",
+    bg: "linear-gradient(160deg, #9eb0aa 0%, #8aa09a 100%)",
   },
   {
     id: 6,
@@ -54,8 +50,7 @@ const products = [
     price: "$210",
     category: "Resort Wear",
     tag: "Low Stock",
-    bg: "linear-gradient(160deg, #CDBFA8 0%, #BCAE98 100%)",
-    size: "standard",
+    bg: "linear-gradient(160deg, #cdbfa8 0%, #bcae98 100%)",
   },
 ];
 
@@ -66,77 +61,65 @@ function ProductCard({ product }: { product: Product }) {
 
   return (
     <div
-      className="group cursor-pointer"
+      className="cursor-pointer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Image */}
-      <div
-        className={`relative overflow-hidden ${
-          product.size === "tall" ? "aspect-[2/3]" : "aspect-[3/4]"
-        }`}
-      >
+      {/* Image — tall aspect ratio like Indah (~3:4) */}
+      <div className="relative overflow-hidden" style={{ aspectRatio: "3/4" }}>
         <div
           className="absolute inset-0 img-zoom"
           style={{ background: product.bg }}
         />
-        <div className="grain absolute inset-0 opacity-[0.08] mix-blend-overlay pointer-events-none" />
-        {/* Placeholder text */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <span
-            className="text-[8px] tracking-[0.4em] uppercase"
-            style={{ fontFamily: "var(--font-sans)", color: "rgba(28,28,28,0.18)" }}
-          >
-            Product Image
-          </span>
-        </div>
+
         {/* Tag */}
         {product.tag && (
           <span
-            className="absolute top-4 left-4 text-[8px] tracking-[0.2em] uppercase px-3 py-1.5 font-light"
+            className="absolute top-4 left-4 text-[9px] tracking-[0.15em] uppercase px-2.5 py-1 font-normal"
             style={{
               fontFamily: "var(--font-sans)",
-              background: "var(--cream-bg)",
-              color: "var(--charcoal)",
+              background: "#ffffff",
+              color: "var(--text)",
             }}
           >
             {product.tag}
           </span>
         )}
-        {/* Quick Add */}
+
+        {/* Quick Add — slides up on hover */}
         <div
-          className={`absolute bottom-0 inset-x-0 py-[13px] text-center transition-all duration-500 ease-out ${
+          className={`absolute bottom-0 inset-x-0 py-3 text-center transition-all duration-400 ${
             hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
           }`}
-          style={{ background: "var(--charcoal)" }}
+          style={{ background: "rgba(0,0,0,0.85)" }}
         >
           <span
-            className="text-[8.5px] tracking-[0.32em] uppercase font-light"
-            style={{ fontFamily: "var(--font-sans)", color: "var(--cream-bg)" }}
+            className="text-[9px] tracking-[0.28em] uppercase"
+            style={{ fontFamily: "var(--font-sans)", color: "#ffffff", fontWeight: 400 }}
           >
-            + Quick Add
+            + QUICK ADD
           </span>
         </div>
       </div>
 
-      {/* Info */}
-      <div className="mt-4 px-0.5">
+      {/* Product info */}
+      <div className="mt-3">
         <p
-          className="text-[8.5px] tracking-[0.28em] uppercase mb-1.5"
-          style={{ fontFamily: "var(--font-sans)", color: "var(--warm-gray)" }}
+          className="text-[9px] tracking-[0.22em] uppercase mb-1"
+          style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
         >
           {product.category}
         </p>
-        <div className="flex items-baseline justify-between">
+        <div className="flex items-baseline justify-between gap-3">
           <h3
-            className="text-[19px] font-light leading-tight"
-            style={{ fontFamily: "var(--font-cormorant)", color: "var(--charcoal)" }}
+            className="text-[15px] leading-snug"
+            style={{ fontFamily: "var(--font-heading)", color: "var(--text)", fontWeight: 400 }}
           >
             {product.name}
           </h3>
           <span
-            className="text-[11.5px] font-light ml-4 flex-shrink-0"
-            style={{ fontFamily: "var(--font-sans)", color: "var(--warm-gray)" }}
+            className="text-[12px] flex-shrink-0"
+            style={{ fontFamily: "var(--font-sans)", color: "var(--text-mid)", fontWeight: 400 }}
           >
             {product.price}
           </span>
@@ -148,77 +131,68 @@ function ProductCard({ product }: { product: Product }) {
 
 export default function FeaturedProducts() {
   return (
-    <section id="shop" className="py-28 md:py-36" style={{ background: "var(--cream-bg)" }}>
-      <div className="w-full max-w-[1400px] mx-auto px-8 md:px-14">
+    <section id="shop" className="py-20 md:py-28" style={{ background: "var(--bg)" }}>
+      <div className="w-full max-w-[1440px] mx-auto" style={{ padding: "0 40px" }}>
 
         {/* Section header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 md:mb-20 gap-6">
+        <div className="flex items-end justify-between mb-10 md:mb-14">
           <div>
             <p
-              className="text-[9px] tracking-[0.45em] uppercase mb-4 font-light"
-              style={{ fontFamily: "var(--font-sans)", color: "var(--terracotta)" }}
+              className="text-[9px] tracking-[0.35em] uppercase mb-3"
+              style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
             >
               The Collection
             </p>
             <h2
               style={{
-                fontFamily: "var(--font-cormorant)",
-                fontWeight: 300,
-                fontSize: "clamp(46px, 6vw, 84px)",
-                lineHeight: 0.95,
-                color: "var(--charcoal)",
+                fontFamily: "var(--font-heading)",
+                fontWeight: 400,
+                fontSize: "clamp(28px, 3.5vw, 42px)",
+                lineHeight: 1.1,
+                color: "var(--text)",
               }}
             >
-              Island
-              <br />
-              <em style={{ fontStyle: "italic", color: "var(--charcoal)" }}>Dreams</em>
+              Island Dreams
             </h2>
           </div>
-          <button
+          <Link
+            href="#"
+            className="text-[10px] tracking-[0.2em] uppercase hover:opacity-50 transition-opacity duration-200 pb-0.5 hidden md:block"
             style={{
               fontFamily: "var(--font-sans)",
-              color: "var(--charcoal)",
+              color: "var(--text)",
+              fontWeight: 400,
+              borderBottom: "1px solid var(--text)",
             }}
-            className="self-start md:self-auto text-[9.5px] tracking-[0.25em] uppercase border-b border-charcoal pb-0.5 hover:opacity-40 transition-opacity duration-300 font-light whitespace-nowrap"
           >
-            View All Pieces →
-          </button>
+            VIEW ALL
+          </Link>
         </div>
 
-        {/* Asymmetric editorial grid */}
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-6 mb-4 md:mb-6">
-          <div className="col-span-2 md:col-span-5">
-            <ProductCard product={products[0]} />
-          </div>
-          <div className="hidden md:flex md:col-span-7 flex-col gap-6">
-            <div className="grid grid-cols-2 gap-6 flex-1">
-              <ProductCard product={products[1]} />
-              <ProductCard product={products[2]} />
-            </div>
-          </div>
-          <div className="col-span-1 md:hidden">
-            <ProductCard product={products[1]} />
-          </div>
+        {/* Uniform 3-column grid — desktop; 2-column — mobile */}
+        <div
+          className="grid grid-cols-2 md:grid-cols-3"
+          style={{ gap: "20px" }}
+        >
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
 
-        <div className="md:hidden mb-4">
-          <ProductCard product={products[2]} />
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-6">
-          <div className="hidden md:grid md:col-span-7 grid-cols-2 gap-6 items-start">
-            <ProductCard product={products[3]} />
-            <ProductCard product={products[4]} />
-          </div>
-          <div className="md:hidden col-span-1">
-            <ProductCard product={products[3]} />
-          </div>
-          <div className="md:hidden col-span-1">
-            <ProductCard product={products[4]} />
-          </div>
-          <div className="col-span-2 md:col-span-5">
-            <ProductCard product={products[5]} />
-          </div>
+        {/* Mobile view all */}
+        <div className="text-center mt-10 md:hidden">
+          <Link
+            href="#"
+            className="text-[10px] tracking-[0.2em] uppercase pb-0.5 hover:opacity-50 transition-opacity"
+            style={{
+              fontFamily: "var(--font-sans)",
+              color: "var(--text)",
+              fontWeight: 400,
+              borderBottom: "1px solid var(--text)",
+            }}
+          >
+            VIEW ALL
+          </Link>
         </div>
       </div>
     </section>

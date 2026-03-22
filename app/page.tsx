@@ -1,11 +1,9 @@
 import AnnouncementBar from "./components/AnnouncementBar";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Marquee from "./components/Marquee";
-import FeaturedProducts from "./components/FeaturedProducts";
 import EditorialBanner from "./components/EditorialBanner";
-import About from "./components/About";
-import InstagramGrid from "./components/InstagramGrid";
+import CategoryMosaic from "./components/CategoryMosaic";
+import FeaturedProducts from "./components/FeaturedProducts";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -14,11 +12,9 @@ export default function Home() {
       <AnnouncementBar />
       <Navbar />
       <Hero />
-      <Marquee />
-      <FeaturedProducts />
       <EditorialBanner />
-      <About />
-      <InstagramGrid />
+      <CategoryMosaic />
+      <FeaturedProducts />
       <Footer />
     </main>
   );

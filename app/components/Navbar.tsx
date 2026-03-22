@@ -1,147 +1,135 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
+const navItems = [
+  { label: "NEW ARRIVALS", href: "#shop" },
+  { label: "SHOP", href: "#shop" },
+  { label: "OUR STORY", href: "#about" },
+  { label: "CUSTOMER CARE", href: "#contact" },
+];
+
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const navLinks = [
-    { label: "Shop", href: "#shop" },
-    { label: "Collections", href: "#shop" },
-  ];
-  const rightLinks = [
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
-  ];
-
-  const linkStyle = {
-    fontFamily: "var(--font-sans)",
-    color: scrolled ? "var(--charcoal)" : "rgba(250,248,244,0.8)",
-  };
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-          scrolled ? "shadow-[0_1px_0_0_rgba(28,28,28,0.08)]" : "bg-transparent"
-        }`}
-        style={
-          scrolled
-            ? { background: "rgba(250,248,244,0.97)", backdropFilter: "blur(16px)" }
-            : {}
-        }
+        className="sticky top-0 z-50 w-full border-b"
+        style={{
+          background: "#ffffff",
+          borderColor: "var(--border)",
+          height: "60px",
+        }}
       >
-        <div className="w-full px-8 md:px-14 flex items-center justify-between h-[68px] md:h-[76px]">
-          {/* Left links */}
-          <div className="hidden md:flex items-center gap-10">
-            {navLinks.map((l) => (
-              <Link
-                key={l.label}
-                href={l.href}
-                style={linkStyle}
-                className="text-[10px] tracking-[0.22em] uppercase font-light transition-opacity duration-300 hover:opacity-50"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Centered logo — Cormorant italic */}
+        <div
+          className="w-full h-full flex items-center justify-between"
+          style={{ padding: "0 40px" }}
+        >
+          {/* Logo — left aligned, Bodoni Moda italic */}
           <Link
             href="/"
             style={{
-              fontFamily: "var(--font-cormorant)",
+              fontFamily: "var(--font-heading)",
               fontStyle: "italic",
               fontWeight: 400,
-              letterSpacing: "0.12em",
-              color: scrolled ? "var(--charcoal)" : "white",
-              fontSize: "clamp(18px, 2vw, 22px)",
+              fontSize: "20px",
+              letterSpacing: "0.06em",
+              color: "var(--text)",
+              flexShrink: 0,
             }}
-            className="absolute left-1/2 -translate-x-1/2 transition-colors duration-300 hover:opacity-60 whitespace-nowrap"
+            className="hover:opacity-60 transition-opacity duration-200"
           >
             Betty Beach
           </Link>
 
-          {/* Right links */}
-          <div className="hidden md:flex items-center gap-10">
-            {rightLinks.map((l) => (
+          {/* Center nav — desktop */}
+          <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+            {navItems.map((item) => (
               <Link
-                key={l.label}
-                href={l.href}
-                style={linkStyle}
-                className="text-[10px] tracking-[0.22em] uppercase font-light transition-opacity duration-300 hover:opacity-50"
+                key={item.label}
+                href={item.href}
+                className="text-[11px] tracking-[0.1em] uppercase hover:opacity-50 transition-opacity duration-200"
+                style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
               >
-                {l.label}
+                {item.label}
               </Link>
             ))}
+          </div>
+
+          {/* Right — desktop */}
+          <div className="hidden md:flex items-center gap-7">
             <button
-              aria-label="Bag"
-              style={linkStyle}
-              className="text-[10px] tracking-[0.22em] uppercase font-light transition-opacity duration-300 hover:opacity-50"
+              className="text-[11px] tracking-[0.1em] uppercase hover:opacity-50 transition-opacity duration-200"
+              style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
             >
-              Bag (0)
+              SEARCH
+            </button>
+            <button
+              className="text-[11px] tracking-[0.1em] uppercase hover:opacity-50 transition-opacity duration-200"
+              style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
+            >
+              LOG IN
+            </button>
+            <button
+              className="text-[11px] tracking-[0.1em] uppercase hover:opacity-50 transition-opacity duration-200"
+              style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
+            >
+              CART&nbsp;0
             </button>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden ml-auto flex flex-col justify-center gap-[5px] p-1 z-10"
-            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden flex flex-col justify-center gap-[5px] p-1 ml-auto"
+            onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
             <span
-              className={`block w-[22px] h-px transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[3px]" : ""}`}
-              style={{ background: scrolled ? "var(--charcoal)" : "white" }}
+              className={`block w-[22px] h-px bg-black transition-all duration-300 origin-center ${mobileOpen ? "rotate-45 translate-y-[3px]" : ""}`}
             />
             <span
-              className={`block w-[22px] h-px transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`}
-              style={{ background: scrolled ? "var(--charcoal)" : "white" }}
+              className={`block w-[22px] h-px bg-black transition-all duration-300 ${mobileOpen ? "opacity-0 scale-x-0" : ""}`}
             />
             <span
-              className={`block w-[22px] h-px transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[3px]" : ""}`}
-              style={{ background: scrolled ? "var(--charcoal)" : "white" }}
+              className={`block w-[22px] h-px bg-black transition-all duration-300 origin-center ${mobileOpen ? "-rotate-45 -translate-y-[3px]" : ""}`}
             />
           </button>
         </div>
       </nav>
 
-      {/* Mobile full-screen menu */}
+      {/* Mobile menu */}
       <div
-        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-7 transition-all duration-400 md:hidden ${
+          mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{ background: "var(--cream-bg)" }}
+        style={{ background: "#ffffff" }}
       >
-        <p
+        <Link
+          href="/"
           style={{
-            fontFamily: "var(--font-cormorant)",
+            fontFamily: "var(--font-heading)",
             fontStyle: "italic",
             fontWeight: 400,
-            letterSpacing: "0.12em",
-            color: "var(--charcoal)",
             fontSize: "22px",
+            letterSpacing: "0.08em",
+            color: "var(--text)",
           }}
           className="mb-6"
+          onClick={() => setMobileOpen(false)}
         >
           Betty Beach
-        </p>
-        {[...navLinks, ...rightLinks, { label: "Bag (0)", href: "#" }].map((l) => (
+        </Link>
+        {[...navItems, { label: "CART (0)", href: "#" }].map((item) => (
           <Link
-            key={l.label}
-            href={l.href}
-            onClick={() => setMenuOpen(false)}
-            style={{ fontFamily: "var(--font-cormorant)", color: "var(--charcoal)" }}
-            className="text-[34px] font-light tracking-[0.08em] uppercase hover:opacity-40 transition-opacity"
+            key={item.label}
+            href={item.href}
+            onClick={() => setMobileOpen(false)}
+            className="text-[13px] tracking-[0.18em] uppercase hover:opacity-40 transition-opacity"
+            style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
           >
-            {l.label}
+            {item.label}
           </Link>
         ))}
       </div>
