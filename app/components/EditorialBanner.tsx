@@ -1,13 +1,17 @@
 export default function EditorialBanner() {
   return (
     <section className="py-0 overflow-hidden">
-      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[500px] md:min-h-[600px]">
-        {/* Left — dark block with text */}
-        <div className="bg-[#1a1a1a] flex items-center justify-center px-12 py-20 md:py-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[520px] md:min-h-[620px]">
+
+        {/* Left — tropical green block with text */}
+        <div
+          className="flex items-center justify-center px-12 py-20 md:py-0"
+          style={{ background: "var(--tropical-green)" }}
+        >
           <div className="max-w-xs text-center">
             <p
-              className="text-[10px] tracking-[0.35em] uppercase text-[#a09590] mb-5"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="text-[10px] tracking-[0.35em] uppercase mb-5 font-medium"
+              style={{ fontFamily: "var(--font-sans)", color: "rgba(245,232,208,0.7)" }}
             >
               Limited Edition
             </p>
@@ -20,40 +24,41 @@ export default function EditorialBanner() {
               <em className="italic">Hour Edit</em>
             </h2>
             <p
-              className="text-sm font-light leading-relaxed text-[#8a8580] mb-10"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="text-sm font-light leading-relaxed mb-10"
+              style={{ fontFamily: "var(--font-sans)", color: "rgba(245,232,208,0.75)" }}
             >
               A curated selection of our most coveted pieces — reimagined in warm, sun-drenched
               tones for the season ahead.
             </p>
             <button
-              className="text-[11px] tracking-[0.25em] uppercase text-white border border-white/40 px-8 py-3 hover:bg-white hover:text-[#1a1a1a] transition-all duration-300 font-light"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="text-[11px] tracking-[0.25em] uppercase text-white border border-white/50 px-8 py-3 hover:bg-white hover:text-[#3D7A55] transition-all duration-300 font-medium"
+              style={{ fontFamily: "var(--font-sans)" }}
             >
               Explore the Edit
             </button>
           </div>
         </div>
 
-        {/* Right — image placeholder */}
+        {/* Right — warm coral/sunset image placeholder */}
         <div
-          className="relative min-h-[300px]"
+          className="relative min-h-[320px]"
           style={{
-            background: "linear-gradient(160deg, #c9b8a0 0%, #b8a890 40%, #d0bfa8 100%)",
+            background: "linear-gradient(160deg, #C4603A 0%, #E07855 30%, #E8943A 60%, #D4A830 100%)",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#1a1a1a]/10" />
+          <div className="grain absolute inset-0 opacity-[0.14] mix-blend-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#3D7A55]/20" />
           <div className="absolute inset-0 flex items-center justify-center">
             <p
               className="text-white/20 text-[9px] tracking-widest uppercase"
-              style={{ fontFamily: "var(--font-inter)" }}
+              style={{ fontFamily: "var(--font-sans)" }}
             >
               Campaign Image
             </p>
           </div>
-          {/* Corner accent */}
-          <div className="absolute top-8 right-8 w-12 h-12 border-t border-r border-white/30" />
-          <div className="absolute bottom-8 left-8 w-12 h-12 border-b border-l border-white/30" />
+          {/* Decorative tropical corner accents */}
+          <div className="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-white/30" />
+          <div className="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-white/30" />
         </div>
       </div>
     </section>

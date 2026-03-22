@@ -3,41 +3,41 @@
 import { useState } from "react";
 
 const posts = [
-  { id: 1, bgFrom: "#c8bfb0", bgTo: "#b0a898", ratio: "aspect-square" },
-  { id: 2, bgFrom: "#d4cabb", bgTo: "#c0b4a2", ratio: "aspect-square" },
-  { id: 3, bgFrom: "#bfb5a8", bgTo: "#a89c90", ratio: "aspect-square" },
-  { id: 4, bgFrom: "#cac0b2", bgTo: "#b8ae9e", ratio: "aspect-square" },
-  { id: 5, bgFrom: "#d0c8bc", bgTo: "#beb6aa", ratio: "aspect-square" },
-  { id: 6, bgFrom: "#c4bab0", bgTo: "#b0a89e", ratio: "aspect-square" },
-  { id: 7, bgFrom: "#d8d0c8", bgTo: "#c8c0b8", ratio: "aspect-square" },
-  { id: 8, bgFrom: "#c0b8b0", bgTo: "#aca4a0", ratio: "aspect-square" },
+  { id: 1, bg: "linear-gradient(135deg, #C4603A, #E07855)", ratio: "aspect-square" },
+  { id: 2, bg: "linear-gradient(135deg, #3D7A55, #5A9468)", ratio: "aspect-square" },
+  { id: 3, bg: "linear-gradient(135deg, #E8943A, #D4A830)", ratio: "aspect-square" },
+  { id: 4, bg: "linear-gradient(135deg, #D97A55, #E8943A)", ratio: "aspect-square" },
+  { id: 5, bg: "linear-gradient(135deg, #2D5E3E, #3D7A55)", ratio: "aspect-square" },
+  { id: 6, bg: "linear-gradient(135deg, #D4A830, #F0C84A)", ratio: "aspect-square" },
+  { id: 7, bg: "linear-gradient(135deg, #E07855, #C4603A)", ratio: "aspect-square" },
+  { id: 8, bg: "linear-gradient(135deg, #5A9468, #D4A830)", ratio: "aspect-square" },
 ];
 
 export default function InstagramGrid() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section className="py-24 md:py-32 bg-[#faf9f7]">
+    <section className="py-24 md:py-32" style={{ background: "var(--sand-mid)" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Header */}
         <div className="text-center mb-14">
           <p
-            className="text-[10px] tracking-[0.35em] uppercase text-[#6b6560] mb-3"
-            style={{ fontFamily: "var(--font-inter)" }}
+            className="text-[10px] tracking-[0.35em] uppercase mb-3 font-medium"
+            style={{ fontFamily: "var(--font-sans)", color: "var(--terracotta)" }}
           >
             Follow Along
           </p>
           <h2
-            className="text-4xl md:text-5xl font-light text-[#1a1a1a] mb-4"
-            style={{ fontFamily: "var(--font-cormorant)" }}
+            className="text-4xl md:text-5xl font-light mb-4"
+            style={{ fontFamily: "var(--font-pacifico)", color: "var(--deep-brown)" }}
           >
-            @soleil.swim
+            @bettybeach
           </h2>
           <p
-            className="text-sm font-light text-[#6b6560]"
-            style={{ fontFamily: "var(--font-inter)" }}
+            className="text-sm font-light"
+            style={{ fontFamily: "var(--font-sans)", color: "var(--warm-brown)" }}
           >
-            Tag us in your photos for a chance to be featured
+            Tag us in your photos for a chance to be featured ✨
           </p>
         </div>
 
@@ -55,15 +55,17 @@ export default function InstagramGrid() {
               <div
                 className="absolute inset-0 transition-transform duration-500 ease-out"
                 style={{
-                  background: `linear-gradient(135deg, ${post.bgFrom}, ${post.bgTo})`,
-                  transform: hovered === post.id ? "scale(1.05)" : "scale(1)",
+                  background: post.bg,
+                  transform: hovered === post.id ? "scale(1.06)" : "scale(1)",
                 }}
               />
+              <div className="grain absolute inset-0 opacity-[0.1] mix-blend-overlay pointer-events-none" />
               {/* Hover overlay */}
               <div
-                className={`absolute inset-0 bg-[#1a1a1a]/30 flex items-center justify-center transition-opacity duration-300 ${
+                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
                   hovered === post.id ? "opacity-100" : "opacity-0"
                 }`}
+                style={{ background: "rgba(61,32,10,0.35)" }}
               >
                 <div className="text-center">
                   <svg
@@ -81,17 +83,17 @@ export default function InstagramGrid() {
                   </svg>
                   <span
                     className="text-white text-[9px] tracking-widest uppercase"
-                    style={{ fontFamily: "var(--font-inter)" }}
+                    style={{ fontFamily: "var(--font-sans)" }}
                   >
                     View Post
                   </span>
                 </div>
               </div>
-              {/* Placeholder label */}
+              {/* Placeholder */}
               <div className="absolute bottom-2 left-0 right-0 flex justify-center">
                 <p
                   className="text-white/20 text-[8px] tracking-widest uppercase"
-                  style={{ fontFamily: "var(--font-inter)" }}
+                  style={{ fontFamily: "var(--font-sans)" }}
                 >
                   Photo
                 </p>
@@ -104,8 +106,12 @@ export default function InstagramGrid() {
         <div className="text-center mt-10">
           <a
             href="#"
-            className="inline-block text-[11px] tracking-[0.2em] uppercase text-[#1a1a1a] border-b border-[#1a1a1a] pb-0.5 hover:text-[#6b6560] hover:border-[#6b6560] transition-colors font-light"
-            style={{ fontFamily: "var(--font-inter)" }}
+            className="inline-block text-[11px] tracking-[0.2em] uppercase pb-0.5 hover:opacity-60 transition-opacity font-medium"
+            style={{
+              fontFamily: "var(--font-sans)",
+              color: "var(--terracotta)",
+              borderBottom: "1px solid var(--terracotta)",
+            }}
           >
             Follow on Instagram
           </a>

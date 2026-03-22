@@ -9,8 +9,8 @@ const products = [
     price: "$98",
     category: "Swimwear",
     tag: "New",
-    bg: "linear-gradient(150deg, #C9BBA8 0%, #B0A090 100%)",
-    size: "tall", // tall = aspect-[2/3], standard = aspect-square
+    bg: "linear-gradient(150deg, #C4603A 0%, #E07855 50%, #E8943A 100%)",
+    size: "tall",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const products = [
     price: "$82",
     category: "Swimwear",
     tag: null,
-    bg: "linear-gradient(150deg, #BEB0A0 0%, #A89080 100%)",
+    bg: "linear-gradient(150deg, #3D7A55 0%, #5A9468 50%, #D4A830 100%)",
     size: "standard",
   },
   {
@@ -27,7 +27,7 @@ const products = [
     price: "$245",
     category: "Resort Wear",
     tag: "Bestseller",
-    bg: "linear-gradient(150deg, #D4C8B4 0%, #BEB0A0 100%)",
+    bg: "linear-gradient(150deg, #E8943A 0%, #D4A830 50%, #F0C84A 100%)",
     size: "standard",
   },
   {
@@ -36,7 +36,7 @@ const products = [
     price: "$185",
     category: "Dresses",
     tag: "New",
-    bg: "linear-gradient(150deg, #C0B4A4 0%, #A89888 100%)",
+    bg: "linear-gradient(150deg, #D97A55 0%, #C4603A 40%, #7A4820 100%)",
     size: "tall",
   },
   {
@@ -45,7 +45,7 @@ const products = [
     price: "$165",
     category: "Swimwear",
     tag: null,
-    bg: "linear-gradient(150deg, #CAC0B0 0%, #B4A898 100%)",
+    bg: "linear-gradient(150deg, #2D5E3E 0%, #3D7A55 50%, #5A9468 100%)",
     size: "standard",
   },
   {
@@ -54,7 +54,7 @@ const products = [
     price: "$210",
     category: "Resort Wear",
     tag: "Low Stock",
-    bg: "linear-gradient(150deg, #C8BAA8 0%, #B0A090 100%)",
+    bg: "linear-gradient(150deg, #D4A830 0%, #E8943A 40%, #E07855 100%)",
     size: "standard",
   },
 ];
@@ -80,30 +80,40 @@ function ProductCard({ product }: { product: Product }) {
           className="absolute inset-0 img-zoom"
           style={{ background: product.bg }}
         />
+        {/* Warm grain on cards */}
+        <div className="grain absolute inset-0 opacity-[0.12] mix-blend-overlay pointer-events-none" />
         {/* Placeholder text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <span className="text-white/[0.13] text-[8px] tracking-[0.5em] uppercase" style={{ fontFamily: "var(--font-inter)" }}>
+          <span
+            className="text-white/20 text-[8px] tracking-[0.5em] uppercase"
+            style={{ fontFamily: "var(--font-sans)" }}
+          >
             Product Image
           </span>
         </div>
         {/* Tag */}
         {product.tag && (
           <span
-            className="absolute top-4 left-4 bg-[#F7F4EF] text-[#211E1B] text-[8px] tracking-[0.2em] uppercase px-2.5 py-1"
-            style={{ fontFamily: "var(--font-inter)" }}
+            className="absolute top-4 left-4 text-[8px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium"
+            style={{
+              fontFamily: "var(--font-sans)",
+              background: "var(--golden-lt)",
+              color: "var(--deep-brown)",
+            }}
           >
             {product.tag}
           </span>
         )}
         {/* Quick Add */}
         <div
-          className={`absolute bottom-0 inset-x-0 bg-[#211E1B] py-4 text-center transition-all duration-400 ease-out ${
+          className={`absolute bottom-0 inset-x-0 py-4 text-center transition-all duration-400 ease-out ${
             hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"
           }`}
+          style={{ background: "var(--terracotta)" }}
         >
           <span
-            className="text-white text-[9px] tracking-[0.3em] uppercase font-light"
-            style={{ fontFamily: "var(--font-inter)" }}
+            className="text-white text-[9px] tracking-[0.3em] uppercase font-medium"
+            style={{ fontFamily: "var(--font-sans)" }}
           >
             + Quick Add
           </span>
@@ -113,21 +123,21 @@ function ProductCard({ product }: { product: Product }) {
       {/* Info */}
       <div className="mt-4 px-0.5">
         <p
-          className="text-[9px] tracking-[0.25em] uppercase text-[#8A8078] mb-1"
-          style={{ fontFamily: "var(--font-inter)" }}
+          className="text-[9px] tracking-[0.25em] uppercase mb-1"
+          style={{ fontFamily: "var(--font-sans)", color: "var(--mid-brown)" }}
         >
           {product.category}
         </p>
         <div className="flex items-baseline justify-between">
           <h3
-            className="text-[19px] font-light text-[#211E1B] leading-tight"
-            style={{ fontFamily: "var(--font-cormorant)" }}
+            className="text-[20px] font-light leading-tight"
+            style={{ fontFamily: "var(--font-cormorant)", color: "var(--deep-brown)" }}
           >
             {product.name}
           </h3>
           <span
-            className="text-[12px] font-light text-[#8A8078] ml-4 flex-shrink-0"
-            style={{ fontFamily: "var(--font-inter)" }}
+            className="text-[12px] font-medium ml-4 flex-shrink-0"
+            style={{ fontFamily: "var(--font-sans)", color: "var(--terracotta)" }}
           >
             {product.price}
           </span>
@@ -139,15 +149,15 @@ function ProductCard({ product }: { product: Product }) {
 
 export default function FeaturedProducts() {
   return (
-    <section id="shop" className="bg-[#F7F4EF] py-28 md:py-36">
+    <section id="shop" className="py-28 md:py-36" style={{ background: "var(--sand)" }}>
       <div className="w-full max-w-[1400px] mx-auto px-8 md:px-14">
 
         {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 md:mb-20 gap-6">
           <div>
             <p
-              className="text-[9px] tracking-[0.45em] uppercase text-[#8A8078] mb-4"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="text-[9px] tracking-[0.45em] uppercase mb-4"
+              style={{ fontFamily: "var(--font-sans)", color: "var(--terracotta)" }}
             >
               The Collection
             </p>
@@ -157,17 +167,17 @@ export default function FeaturedProducts() {
                 fontWeight: 300,
                 fontSize: "clamp(48px, 6vw, 88px)",
                 lineHeight: 0.95,
-                color: "#211E1B",
+                color: "var(--deep-brown)",
               }}
             >
-              Summer
+              Island
               <br />
-              <em style={{ fontStyle: "italic" }}>Stories</em>
+              <em style={{ fontStyle: "italic", color: "var(--terracotta)" }}>Dreams</em>
             </h2>
           </div>
           <button
-            style={{ fontFamily: "var(--font-inter)" }}
-            className="self-start md:self-auto text-[10px] tracking-[0.25em] uppercase text-[#211E1B] border-b border-[#211E1B]/50 pb-0.5 hover:border-[#211E1B] hover:text-[#8A8078] hover:border-[#8A8078] transition-all duration-300 font-light whitespace-nowrap"
+            style={{ fontFamily: "var(--font-sans)", color: "var(--terracotta)", borderColor: "var(--terracotta)" }}
+            className="self-start md:self-auto text-[10px] tracking-[0.25em] uppercase border-b pb-0.5 hover:opacity-70 transition-all duration-300 font-medium whitespace-nowrap"
           >
             View All Pieces →
           </button>
@@ -187,7 +197,7 @@ export default function FeaturedProducts() {
               <ProductCard product={products[2]} />
             </div>
           </div>
-          {/* Mobile: show all individually */}
+          {/* Mobile: show individually */}
           <div className="col-span-1 md:hidden">
             <ProductCard product={products[1]} />
           </div>

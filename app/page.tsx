@@ -1,6 +1,7 @@
 import AnnouncementBar from "./components/AnnouncementBar";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Marquee from "./components/Marquee";
 import FeaturedProducts from "./components/FeaturedProducts";
 import EditorialBanner from "./components/EditorialBanner";
 import About from "./components/About";
@@ -13,6 +14,7 @@ export default function Home() {
       <AnnouncementBar />
       <Navbar />
       <Hero />
+      <Marquee />
       <FeaturedProducts />
       <EditorialBanner />
       <About />

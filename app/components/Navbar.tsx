@@ -22,15 +22,20 @@ export default function Navbar() {
     { label: "Contact", href: "#contact" },
   ];
 
+  const linkStyle = {
+    fontFamily: "var(--font-sans)",
+    color: scrolled ? "var(--warm-brown)" : "rgba(255,255,255,0.88)",
+  };
+
   return (
     <>
-      {/* Desktop nav */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
           scrolled
-            ? "bg-[#F7F4EF]/96 backdrop-blur-md shadow-[0_1px_0_rgba(0,0,0,0.06)]"
+            ? "shadow-[0_2px_24px_rgba(61,32,10,0.12)]"
             : "bg-transparent"
         }`}
+        style={scrolled ? { background: "rgba(250,243,232,0.97)", backdropFilter: "blur(12px)" } : {}}
       >
         <div className="w-full px-8 md:px-14 flex items-center justify-between h-[68px] md:h-[76px]">
           {/* Left links */}
@@ -39,8 +44,8 @@ export default function Navbar() {
               <Link
                 key={l.label}
                 href={l.href}
-                style={{ fontFamily: "var(--font-inter)" }}
-                className="text-[10.5px] tracking-[0.22em] uppercase font-light text-[#211E1B] hover:text-[#8A8078] transition-colors duration-300"
+                style={linkStyle}
+                className="text-[10.5px] tracking-[0.2em] uppercase font-medium transition-opacity duration-300 hover:opacity-60"
               >
                 {l.label}
               </Link>
@@ -50,10 +55,13 @@ export default function Navbar() {
           {/* Centered logo */}
           <Link
             href="/"
-            style={{ fontFamily: "var(--font-cormorant)" }}
-            className="absolute left-1/2 -translate-x-1/2 text-[26px] md:text-[30px] tracking-[0.45em] font-light uppercase text-[#211E1B] hover:text-[#8A8078] transition-colors duration-300"
+            style={{
+              fontFamily: "var(--font-pacifico)",
+              color: scrolled ? "var(--terracotta)" : "white",
+            }}
+            className="absolute left-1/2 -translate-x-1/2 text-[22px] md:text-[26px] transition-colors duration-300 hover:opacity-75 whitespace-nowrap"
           >
-            Betty Beach
+            betty beach
           </Link>
 
           {/* Right links */}
@@ -62,16 +70,16 @@ export default function Navbar() {
               <Link
                 key={l.label}
                 href={l.href}
-                style={{ fontFamily: "var(--font-inter)" }}
-                className="text-[10.5px] tracking-[0.22em] uppercase font-light text-[#211E1B] hover:text-[#8A8078] transition-colors duration-300"
+                style={linkStyle}
+                className="text-[10.5px] tracking-[0.2em] uppercase font-medium transition-opacity duration-300 hover:opacity-60"
               >
                 {l.label}
               </Link>
             ))}
             <button
               aria-label="Bag"
-              style={{ fontFamily: "var(--font-inter)" }}
-              className="text-[10.5px] tracking-[0.22em] uppercase font-light text-[#211E1B] hover:text-[#8A8078] transition-colors duration-300"
+              style={linkStyle}
+              className="text-[10.5px] tracking-[0.2em] uppercase font-medium transition-opacity duration-300 hover:opacity-60"
             >
               Bag (0)
             </button>
@@ -83,26 +91,42 @@ export default function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
-            <span className={`block w-[22px] h-px bg-[#211E1B] transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[3px]" : ""}`} />
-            <span className={`block w-[22px] h-px bg-[#211E1B] transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
-            <span className={`block w-[22px] h-px bg-[#211E1B] transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[3px]" : ""}`} />
+            <span
+              className={`block w-[22px] h-[2px] transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[3.5px]" : ""}`}
+              style={{ background: scrolled ? "var(--terracotta)" : "white" }}
+            />
+            <span
+              className={`block w-[22px] h-[2px] transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`}
+              style={{ background: scrolled ? "var(--terracotta)" : "white" }}
+            />
+            <span
+              className={`block w-[22px] h-[2px] transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[3.5px]" : ""}`}
+              style={{ background: scrolled ? "var(--terracotta)" : "white" }}
+            />
           </button>
         </div>
       </nav>
 
       {/* Mobile full-screen menu */}
       <div
-        className={`fixed inset-0 z-40 bg-[#F7F4EF] flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${
+        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
+        style={{ background: "var(--cream)" }}
       >
+        <p
+          style={{ fontFamily: "var(--font-pacifico)", color: "var(--terracotta)", fontSize: "28px" }}
+          className="mb-4"
+        >
+          betty beach
+        </p>
         {[...navLinks, ...rightLinks, { label: "Bag (0)", href: "#" }].map((l) => (
           <Link
             key={l.label}
             href={l.href}
             onClick={() => setMenuOpen(false)}
-            style={{ fontFamily: "var(--font-cormorant)" }}
-            className="text-[38px] font-light tracking-[0.15em] uppercase text-[#211E1B] hover:text-[#8A8078] transition-colors"
+            style={{ fontFamily: "var(--font-cormorant)", color: "var(--deep-brown)" }}
+            className="text-[36px] font-light tracking-[0.1em] uppercase hover:opacity-60 transition-opacity"
           >
             {l.label}
           </Link>

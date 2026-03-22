@@ -1,15 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --cream: #F7F4EF;
-  --cream-dark: #EDE8DF;
-  --sand: #D9CFBE;
-  --sand-mid: #C4B49A;
-  --sand-deep: #A89478;
-  --charcoal: #211E1B;
-  --charcoal-mid: #3D3830;
-  --mid: #8A8078;
-  --light: #B0A898;
+  /* Warm tropical palette */
+  --terracotta:    #C4603A;
+  --terracotta-lt: #D97A55;
+  --coral:         #E07855;
+  --coral-lt:      #F09070;
+  --warm-orange:   #E8943A;
+  --golden:        #D4A830;
+  --golden-lt:     #F0C84A;
+  --tropical-green:#3D7A55;
+  --jungle:        #2D5E3E;
+  --sand:          #F5E8D0;
+  --sand-mid:      #EDD9B8;
+  --sand-deep:     #DEC9A0;
+  --cream:         #FAF3E8;
+  --deep-brown:    #3D1F0A;
+  --warm-brown:    #7A4820;
+  --mid-brown:     #A06838;
 }
 
 * {
@@ -23,16 +31,16 @@ html {
 }
 
 body {
-  background: var(--cream);
-  color: var(--charcoal);
+  background: var(--sand);
+  color: var(--deep-brown);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--cream); }
-::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 2px; }
+::-webkit-scrollbar-track { background: var(--sand); }
+::-webkit-scrollbar-thumb { background: var(--terracotta-lt); border-radius: 2px; }
 
 /* Marquee animation */
 @keyframes marquee {
@@ -40,7 +48,7 @@ body {
   to   { transform: translateX(-50%); }
 }
 .marquee-track {
-  animation: marquee 22s linear infinite;
+  animation: marquee 28s linear infinite;
 }
 .marquee-track:hover {
   animation-play-state: paused;
@@ -51,14 +59,25 @@ body {
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .img-zoom:hover {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 /* Fade up animation */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .fade-up {
-  animation: fadeUp 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: fadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Tropical grain overlay */
+/* Email input placeholder styling */
+input::placeholder {
+  color: rgba(245, 232, 208, 0.3);
+}
+
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans, Pacifico } from "next/font/google";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -10,24 +10,31 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
-  variable: "--font-inter",
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const pacifico = Pacifico({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-pacifico",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Betty Beach — Swimwear & Resort Wear",
   description:
-    "Elevated swimwear and resort wear for the free-spirited woman. Sun, salt, and slow living.",
+    "Swimwear and resort wear for the free-spirited woman. Sun, salt, and island living.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${dmSans.variable} ${pacifico.variable}`}>
       <body>{children}</body>
     </html>
   );

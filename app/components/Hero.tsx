@@ -3,101 +3,96 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative w-full h-screen min-h-[700px] overflow-hidden">
-      {/* Background — warm editorial gradient simulating a sun-drenched lifestyle photo */}
+      {/* Tropical sunset gradient background */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(165deg, #C9BAA2 0%, #B8A88A 25%, #A89070 50%, #C0AD94 75%, #D0BFA8 100%)",
+            "linear-gradient(170deg, #C4603A 0%, #D97A55 18%, #E8943A 38%, #D4A830 60%, #3D7A55 82%, #2D5E3E 100%)",
         }}
-      >
-        {/* Subtle grain overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.18] mix-blend-overlay"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-            backgroundSize: "200px 200px",
-          }}
-        />
-        {/* Vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(33,30,27,0.45)_100%)]" />
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#211E1B]/50 to-transparent" />
-        {/* Placeholder label */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <span
-            className="text-white/[0.12] text-[11px] tracking-[0.5em] uppercase"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
-            Full-Screen Lifestyle Image
-          </span>
-        </div>
-      </div>
+      />
 
-      {/* Hero content — vertically and horizontally centered */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-        {/* Eyebrow */}
-        <p
-          className="text-white/60 text-[9px] md:text-[10px] tracking-[0.55em] uppercase mb-7 font-light fade-up"
-          style={{ fontFamily: "var(--font-inter)", animationDelay: "0.1s" }}
-        >
-          Summer Collection — 2026
-        </p>
+      {/* Warm grain overlay */}
+      <div className="grain absolute inset-0 opacity-[0.15] mix-blend-overlay" />
 
-        {/* Main headline — large editorial serif */}
-        <h1
-          className="fade-up"
-          style={{
-            fontFamily: "var(--font-cormorant)",
-            fontWeight: 300,
-            fontSize: "clamp(72px, 12vw, 160px)",
-            lineHeight: 0.92,
-            letterSpacing: "0.01em",
-            color: "white",
-            animationDelay: "0.25s",
-          }}
-        >
-          Born for
-          <br />
-          <em
+      {/* Radial glow — golden centre */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse 80% 60% at 50% 42%, rgba(240,200,74,0.28) 0%, transparent 70%)",
+        }}
+      />
+
+      {/* Bottom fade into sandy body */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-40"
+        style={{ background: "linear-gradient(to top, rgba(61,32,10,0.5), transparent)" }}
+      />
+
+      {/* ── Hero content ── */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-between py-16 px-6 text-center">
+
+        {/* TOP: giant brand logo */}
+        <div className="fade-up w-full flex flex-col items-center pt-[60px] md:pt-[80px]" style={{ animationDelay: "0.1s" }}>
+          <h1
             style={{
-              fontStyle: "italic",
-              fontWeight: 300,
+              fontFamily: "var(--font-pacifico)",
+              fontSize: "clamp(52px, 10vw, 130px)",
+              color: "white",
+              textShadow: "0 4px 32px rgba(61,32,10,0.35)",
+              lineHeight: 1.05,
             }}
           >
-            the water
-          </em>
-        </h1>
+            betty beach
+          </h1>
+          <p
+            className="text-white/70 mt-3 tracking-[0.5em] uppercase text-[10px] md:text-[11px]"
+            style={{ fontFamily: "var(--font-sans)", fontWeight: 300 }}
+          >
+            Swimwear &amp; Resort Wear · Summer 2026
+          </p>
+        </div>
 
-        {/* Subheading */}
-        <p
-          className="text-white/65 font-light mt-8 mb-12 max-w-[340px] leading-[1.75] fade-up"
-          style={{
-            fontFamily: "var(--font-inter)",
-            fontSize: "13px",
-            letterSpacing: "0.06em",
-            animationDelay: "0.45s",
-          }}
-        >
-          Swimwear and resort wear crafted for women who live between sun and sea.
-        </p>
+        {/* MIDDLE: editorial headline */}
+        <div className="flex flex-col items-center fade-up" style={{ animationDelay: "0.3s" }}>
+          <h2
+            style={{
+              fontFamily: "var(--font-cormorant)",
+              fontWeight: 300,
+              fontSize: "clamp(54px, 9.5vw, 140px)",
+              lineHeight: 0.9,
+              color: "white",
+              textShadow: "0 2px 20px rgba(61,32,10,0.25)",
+            }}
+          >
+            Born for
+            <br />
+            <em style={{ fontStyle: "italic" }}>golden shores</em>
+          </h2>
+          <p
+            className="text-white/75 font-light mt-7 max-w-[360px] leading-[1.8]"
+            style={{ fontFamily: "var(--font-sans)", fontSize: "13px", letterSpacing: "0.04em" }}
+          >
+            Crafted for women who move between sunsets, salt water, and slow mornings.
+          </p>
+        </div>
 
-        {/* CTAs */}
+        {/* BOTTOM: CTAs */}
         <div
-          className="flex flex-col sm:flex-row gap-3 items-center fade-up"
-          style={{ animationDelay: "0.6s" }}
+          className="flex flex-col sm:flex-row gap-3 items-center pb-4 fade-up"
+          style={{ animationDelay: "0.55s" }}
         >
           <Link
             href="#shop"
-            style={{ fontFamily: "var(--font-inter)" }}
-            className="inline-block px-11 py-[14px] bg-white text-[#211E1B] text-[10px] tracking-[0.3em] uppercase font-light hover:bg-[#F7F4EF] transition-all duration-300"
+            style={{ fontFamily: "var(--font-sans)", background: "var(--terracotta)" }}
+            className="inline-block px-10 py-[14px] text-white text-[10px] tracking-[0.3em] uppercase font-medium hover:opacity-90 transition-all duration-300"
           >
-            Shop Now
+            Shop the Collection
           </Link>
           <Link
             href="#about"
-            style={{ fontFamily: "var(--font-inter)" }}
-            className="inline-block px-11 py-[14px] border border-white/50 text-white text-[10px] tracking-[0.3em] uppercase font-light hover:bg-white/10 hover:border-white/80 transition-all duration-300"
+            style={{ fontFamily: "var(--font-sans)" }}
+            className="inline-block px-10 py-[14px] border border-white/60 text-white text-[10px] tracking-[0.3em] uppercase font-medium hover:bg-white/15 hover:border-white transition-all duration-300"
           >
             Our Story
           </Link>
@@ -105,11 +100,14 @@ export default function Hero() {
       </div>
 
       {/* Scroll cue */}
-      <div className="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-[10px] fade-up" style={{ animationDelay: "1s" }}>
-        <div className="w-px h-10 bg-white/30 animate-[pulse_2.5s_ease-in-out_infinite]" />
+      <div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 fade-up"
+        style={{ animationDelay: "1s" }}
+      >
+        <div className="w-px h-10 bg-white/40 animate-[pulse_2.5s_ease-in-out_infinite]" />
         <span
-          className="text-white/40 text-[8px] tracking-[0.4em] uppercase"
-          style={{ fontFamily: "var(--font-inter)" }}
+          className="text-white/50 text-[8px] tracking-[0.45em] uppercase"
+          style={{ fontFamily: "var(--font-sans)" }}
         >
           Scroll
         </span>
