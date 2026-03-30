@@ -21,7 +21,7 @@ export default function Hero() {
       {/* Label — pinned to top, centered */}
       <div className="absolute top-[40px] left-0 right-0 flex justify-center px-8">
         <p
-          className="text-[12px] tracking-[0.35em] uppercase"
+          className="text-[15px] tracking-[0.35em] uppercase"
           style={{
             fontFamily: "var(--font-sans)",
             color: "rgba(255,255,255,0.65)",
