@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
         {/* Season label */}
         <p
-          className="text-[10px] tracking-[0.35em] uppercase mb-5"
+          className="text-[10px] tracking-[0.35em] uppercase mb-12"
           style={{
             fontFamily: "var(--font-sans)",
             color: "rgba(255,255,255,0.7)",
@@ -41,7 +41,7 @@ export default function Hero() {
             fontWeight: 400,
             fontSize: "clamp(52px, 9vw, 120px)",
             color: "#ffffff",
-            lineHeight: 1.05,
+            lineHeight: 1.1,
             letterSpacing: "0.02em",
           }}
         >
@@ -50,13 +50,13 @@ export default function Hero() {
 
         {/* Sub-headline */}
         <p
-          className="mt-5 max-w-[420px] leading-[1.7]"
+          className="mt-10 max-w-[420px] leading-[2]"
           style={{
             fontFamily: "var(--font-sans)",
             fontSize: "13px",
             color: "rgba(255,255,255,0.65)",
             fontWeight: 300,
-            letterSpacing: "0.03em",
+            letterSpacing: "0.05em",
           }}
         >
           Crafted for women who move between sunsets, salt water, and slow mornings.
@@ -65,7 +65,7 @@ export default function Hero() {
         {/* CTA */}
         <Link
           href="#shop"
-          className="mt-10 inline-block text-[11px] tracking-[0.28em] uppercase font-normal hover:opacity-85 transition-opacity duration-300"
+          className="mt-16 inline-block text-[11px] tracking-[0.28em] uppercase font-normal hover:opacity-85 transition-opacity duration-300"
           style={{
             fontFamily: "var(--font-sans)",
             background: "var(--terracotta)",

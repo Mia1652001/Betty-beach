@@ -107,9 +107,9 @@ function ProductCard({ product }: { product: Product }) {
       </div>
 
       {/* Product info */}
-      <div className="mt-3">
+      <div className="mt-5">
         <p
-          className="text-[9px] tracking-[0.22em] uppercase mb-1"
+          className="text-[9px] tracking-[0.22em] uppercase mb-2"
           style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
         >
           {product.category}
@@ -135,14 +135,14 @@ function ProductCard({ product }: { product: Product }) {
 
 export default function FeaturedProducts() {
   return (
-    <section id="shop" className="py-20 md:py-28" style={{ background: "var(--bg)" }}>
+    <section id="shop" style={{ background: "var(--bg)", padding: "140px 0" }}>
       <div className="w-full max-w-[1440px] mx-auto" style={{ padding: "0 40px" }}>
 
         {/* Section header */}
-        <div className="flex items-end justify-between mb-10 md:mb-14">
+        <div className="flex items-end justify-between mb-16 md:mb-24">
           <div>
             <p
-              className="text-[9px] tracking-[0.35em] uppercase mb-3"
+              className="text-[9px] tracking-[0.35em] uppercase mb-5"
               style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
             >
               The Collection
@@ -176,7 +176,7 @@ export default function FeaturedProducts() {
         {/* Uniform 3-column grid — desktop; 2-column — mobile */}
         <div
           className="grid grid-cols-2 md:grid-cols-3"
-          style={{ gap: "20px" }}
+          style={{ gap: "32px" }}
         >
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
@@ -184,7 +184,7 @@ export default function FeaturedProducts() {
         </div>
 
         {/* Mobile view all */}
-        <div className="text-center mt-10 md:hidden">
+        <div className="text-center mt-16 md:hidden">
           <Link
             href="#"
             className="text-[10px] tracking-[0.2em] uppercase pb-0.5 hover:opacity-50 transition-opacity"

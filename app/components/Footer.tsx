@@ -26,16 +26,16 @@ export default function Footer() {
 
       {/* Newsletter section */}
       <div
-        className="py-16 md:py-20 border-b"
-        style={{ borderColor: "var(--border)" }}
+        className="border-b"
+        style={{ borderColor: "var(--border)", padding: "120px 0" }}
       >
         <div
-          className="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-10"
+          className="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-16"
           style={{ padding: "0 40px" }}
         >
           <div className="max-w-sm">
             <h3
-              className="mb-3"
+              className="mb-6"
               style={{
                 fontFamily: "var(--font-heading)",
                 fontStyle: "italic",
@@ -96,17 +96,17 @@ export default function Footer() {
       </div>
 
       {/* Footer columns */}
-      <div className="py-16 md:py-20">
+      <div style={{ padding: "120px 0" }}>
         <div
           className="w-full max-w-[1440px] mx-auto"
           style={{ padding: "0 40px" }}
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-16 md:gap-14">
 
             {/* Brand column */}
             <div className="col-span-2 md:col-span-1">
               <p
-                className="mb-4"
+                className="mb-7"
                 style={{
                   fontFamily: "var(--font-heading)",
                   fontStyle: "italic",
@@ -130,12 +130,12 @@ export default function Footer() {
             {Object.entries(footerLinks).map(([heading, links]) => (
               <div key={heading}>
                 <p
-                  className="text-[10px] tracking-[0.25em] uppercase mb-5"
+                  className="text-[10px] tracking-[0.25em] uppercase mb-8"
                   style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
                 >
                   {heading}
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {links.map((link) => (
                     <li key={link}>
                       <Link
@@ -156,7 +156,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div
-        className="border-t py-5"
+        className="border-t py-8"
         style={{ borderColor: "var(--border)" }}
       >
         <div
