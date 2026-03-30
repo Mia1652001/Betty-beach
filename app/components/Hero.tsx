@@ -42,7 +42,7 @@ export default function Hero() {
             letterSpacing: "0.02em",
           }}
         >
-          Island Collection
+          Betty Beach
         </h1>
 
       </div>
