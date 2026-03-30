@@ -1,20 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden" style={{ height: "calc(100vh - 60px)", minHeight: "600px" }}>
-      {/* Background — warm lifestyle image placeholder */}
-      <div
-        className="absolute inset-0 img-zoom"
-        style={{
-          background: "linear-gradient(160deg, #c9b8a8 0%, #b8a494 30%, #a8937e 60%, #967c68 100%)",
-        }}
+      {/* Real hero image */}
+      <Image
+        src="/hero.jpg"
+        alt="Betty Beach Summer 2026 Collection"
+        fill
+        priority
+        style={{ objectFit: "cover", objectPosition: "center" }}
       />
 
       {/* Subtle dark overlay for text legibility */}
       <div
         className="absolute inset-0"
-        style={{ background: "rgba(0,0,0,0.22)" }}
+        style={{ background: "rgba(0,0,0,0.25)" }}
       />
 
       {/* Centered content — Indah style */}

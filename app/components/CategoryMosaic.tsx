@@ -1,20 +1,24 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const categories = [
   {
     label: "SHOP SWIMWEAR",
     href: "#shop",
-    bg: "linear-gradient(160deg, #c9b5a4 0%, #b8a090 100%)",
+    src: "/hero2.jpg",
+    alt: "Shop Swimwear",
   },
   {
     label: "SHOP RESORT WEAR",
     href: "#shop",
-    bg: "linear-gradient(160deg, #9eb0aa 0%, #8aa09a 100%)",
+    src: "/product 1.jpeg",
+    alt: "Shop Resort Wear",
   },
   {
     label: "SHOP DRESSES",
     href: "#shop",
-    bg: "linear-gradient(160deg, #cdbfa8 0%, #bcae98 100%)",
+    src: "/product 2.jpg",
+    alt: "Shop Dresses",
   },
 ];
 
@@ -32,16 +36,19 @@ export default function CategoryMosaic() {
             className="relative overflow-hidden group block"
             style={{ aspectRatio: "3/4" }}
           >
-            {/* Background image placeholder */}
-            <div
-              className="absolute inset-0 img-zoom"
-              style={{ background: cat.bg }}
+            {/* Real image */}
+            <Image
+              src={cat.src}
+              alt={cat.alt}
+              fill
+              style={{ objectFit: "cover", objectPosition: "center" }}
+              className="transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             />
 
             {/* Overlay */}
             <div
-              className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-20"
-              style={{ background: "rgba(0,0,0,0.18)" }}
+              className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-30"
+              style={{ background: "rgba(0,0,0,0.22)" }}
             />
 
             {/* Label */}

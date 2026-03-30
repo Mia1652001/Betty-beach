@@ -1,20 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function EditorialBanner() {
   return (
     <section className="relative w-full overflow-hidden" style={{ minHeight: "520px" }}>
-      {/* Full-bleed lifestyle image placeholder */}
-      <div
-        className="absolute inset-0 img-zoom"
-        style={{
-          background: "linear-gradient(135deg, #b8cac4 0%, #a0b4ae 40%, #8fa4a0 100%)",
-        }}
+      {/* Real collection image */}
+      <Image
+        src="/hero1.jpeg"
+        alt="Golden Hour Collection"
+        fill
+        style={{ objectFit: "cover", objectPosition: "center" }}
       />
 
       {/* Subtle overlay */}
       <div
         className="absolute inset-0"
-        style={{ background: "rgba(0,0,0,0.10)" }}
+        style={{ background: "rgba(0,0,0,0.18)" }}
       />
 
       {/* Centered text overlay */}

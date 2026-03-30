@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const products = [
   {
@@ -10,7 +11,7 @@ const products = [
     price: "$98",
     category: "Swimwear",
     tag: "New",
-    bg: "linear-gradient(160deg, #c9b5a8 0%, #b8a090 100%)",
+    src: "/product3.jpg",
   },
   {
     id: 2,
@@ -18,7 +19,7 @@ const products = [
     price: "$82",
     category: "Swimwear",
     tag: null,
-    bg: "linear-gradient(160deg, #b2bdb8 0%, #a0ada7 100%)",
+    src: "/product 4.jpg",
   },
   {
     id: 3,
@@ -26,7 +27,7 @@ const products = [
     price: "$245",
     category: "Resort Wear",
     tag: "Bestseller",
-    bg: "linear-gradient(160deg, #d4c5af 0%, #c4b49c 100%)",
+    src: "/product 5.jpg",
   },
   {
     id: 4,
@@ -34,7 +35,7 @@ const products = [
     price: "$185",
     category: "Dresses",
     tag: "New",
-    bg: "linear-gradient(160deg, #c8afa4 0%, #b89888 100%)",
+    src: "/product 6.jpg",
   },
   {
     id: 5,
@@ -42,7 +43,7 @@ const products = [
     price: "$165",
     category: "Swimwear",
     tag: null,
-    bg: "linear-gradient(160deg, #9eb0aa 0%, #8aa09a 100%)",
+    src: "/product 7.jpg",
   },
   {
     id: 6,
@@ -50,7 +51,7 @@ const products = [
     price: "$210",
     category: "Resort Wear",
     tag: "Low Stock",
-    bg: "linear-gradient(160deg, #cdbfa8 0%, #bcae98 100%)",
+    src: "/product3.jpg",
   },
 ];
 
@@ -65,17 +66,20 @@ function ProductCard({ product }: { product: Product }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Image — tall aspect ratio like Indah (~3:4) */}
+      {/* Image — tall 3:4 aspect ratio */}
       <div className="relative overflow-hidden" style={{ aspectRatio: "3/4" }}>
-        <div
-          className="absolute inset-0 img-zoom"
-          style={{ background: product.bg }}
+        <Image
+          src={product.src}
+          alt={product.name}
+          fill
+          style={{ objectFit: "cover", objectPosition: "center top" }}
+          className={`transition-transform duration-700 ease-out ${hovered ? "scale-[1.04]" : "scale-100"}`}
         />
 
         {/* Tag */}
         {product.tag && (
           <span
-            className="absolute top-4 left-4 text-[9px] tracking-[0.15em] uppercase px-2.5 py-1 font-normal"
+            className="absolute top-4 left-4 text-[9px] tracking-[0.15em] uppercase px-2.5 py-1 font-normal z-10"
             style={{
               fontFamily: "var(--font-sans)",
               background: "#ffffff",
@@ -88,10 +92,10 @@ function ProductCard({ product }: { product: Product }) {
 
         {/* Quick Add — slides up on hover */}
         <div
-          className={`absolute bottom-0 inset-x-0 py-3 text-center transition-all duration-400 ${
+          className={`absolute bottom-0 inset-x-0 py-3 text-center transition-all duration-400 z-10 ${
             hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
           }`}
-          style={{ background: "rgba(0,0,0,0.85)" }}
+          style={{ background: "rgba(0,0,0,0.82)" }}
         >
           <span
             className="text-[9px] tracking-[0.28em] uppercase"
