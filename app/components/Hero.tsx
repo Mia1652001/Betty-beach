@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
@@ -46,18 +45,6 @@ export default function Hero() {
           Island Collection
         </h1>
 
-        <Link
-          href="#shop"
-          className="mt-16 inline-block text-[11px] tracking-[0.28em] uppercase font-normal hover:opacity-80 transition-opacity duration-300"
-          style={{
-            fontFamily: "var(--font-sans)",
-            background: "var(--terracotta)",
-            color: "#ffffff",
-            padding: "14px 40px",
-          }}
-        >
-          SHOP THE COLLECTION
-        </Link>
       </div>
     </section>
   );
