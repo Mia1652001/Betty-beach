@@ -3,8 +3,11 @@ import Image from "next/image";
 
 export default function EditorialBanner() {
   return (
-    <section className="relative w-full overflow-hidden" style={{ minHeight: "700px" }}>
-      {/* Real collection image */}
+    <section
+      className="relative w-full overflow-hidden"
+      style={{ height: "700px" }}
+    >
+      {/* Background image */}
       <Image
         src="/hero1.jpeg"
         alt="Golden Hour Collection"
@@ -12,32 +15,30 @@ export default function EditorialBanner() {
         style={{ objectFit: "cover", objectPosition: "center" }}
       />
 
-      {/* Subtle overlay */}
-      <div
-        className="absolute inset-0"
-        style={{ background: "rgba(0,0,0,0.18)" }}
-      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.35)" }} />
 
-      {/* Centered text overlay */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 py-[140px]">
+      {/* Content — absolutely centered, clear padding from top/bottom edges */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 py-24">
         <p
-          className="text-[10px] tracking-[0.35em] uppercase mb-10"
+          className="text-[10px] tracking-[0.35em] uppercase mb-7"
           style={{
             fontFamily: "var(--font-sans)",
-            color: "rgba(255,255,255,0.7)",
+            color: "rgba(255,255,255,0.65)",
             fontWeight: 400,
           }}
         >
           New Drop
         </p>
+
         <h2
           style={{
             fontFamily: "var(--font-heading)",
             fontStyle: "italic",
             fontWeight: 400,
-            fontSize: "clamp(42px, 7vw, 96px)",
+            fontSize: "clamp(40px, 6.5vw, 88px)",
             color: "#ffffff",
-            lineHeight: 1.05,
+            lineHeight: 1.08,
             letterSpacing: "0.02em",
           }}
         >
@@ -45,13 +46,15 @@ export default function EditorialBanner() {
           <br />
           Is Here
         </h2>
+
         <Link
           href="#shop"
-          className="mt-16 inline-block text-[11px] tracking-[0.28em] uppercase font-normal border border-white/70 hover:bg-white hover:text-black transition-all duration-300"
+          className="mt-12 inline-block text-[11px] tracking-[0.28em] uppercase font-normal hover:bg-white hover:text-black transition-all duration-300"
           style={{
             fontFamily: "var(--font-sans)",
             color: "#ffffff",
-            padding: "12px 32px",
+            padding: "13px 36px",
+            border: "1px solid rgba(255,255,255,0.65)",
           }}
         >
           SHOP THE COLLECTION
