@@ -18,10 +18,10 @@ export default function Hero() {
       {/* Dark overlay */}
       <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.38)" }} />
 
-      {/* Content — centered horizontally and vertically */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
+      {/* Label — pinned to top, centered */}
+      <div className="absolute top-[40px] left-0 right-0 flex justify-center px-8">
         <p
-          className="text-[10px] tracking-[0.35em] uppercase mb-10"
+          className="text-[12px] tracking-[0.35em] uppercase"
           style={{
             fontFamily: "var(--font-sans)",
             color: "rgba(255,255,255,0.65)",
@@ -30,7 +30,10 @@ export default function Hero() {
         >
           Swimwear &amp; Resort Wear &nbsp;&middot;&nbsp; Summer 2026
         </p>
+      </div>
 
+      {/* Content — centered horizontally and vertically */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
         <h1
           style={{
             fontFamily: "var(--font-heading)",
