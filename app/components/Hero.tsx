@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.38)" }} />
 
       {/* Content — top-aligned with generous top padding */}
-      <div className="absolute inset-0 flex flex-col items-center justify-start text-center px-8 pt-[110px] pb-24">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
         <p
           className="text-[10px] tracking-[0.35em] uppercase mb-10"
           style={{
