@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Dark overlay */}
       <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.38)" }} />
 
-      {/* Content — top-aligned with generous top padding */}
+      {/* Content — centered horizontally and vertically */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
         <p
           className="text-[10px] tracking-[0.35em] uppercase mb-10"
