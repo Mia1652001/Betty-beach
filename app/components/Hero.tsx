@@ -19,10 +19,10 @@ export default function Hero() {
       {/* Dark overlay */}
       <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.38)" }} />
 
-      {/* Content — absolutely centered, clear padding from top/bottom edges */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 py-24">
+      {/* Content — top-aligned with generous top padding */}
+      <div className="absolute inset-0 flex flex-col items-center justify-start text-center px-8 pt-[110px] pb-24">
         <p
-          className="text-[10px] tracking-[0.35em] uppercase mb-6"
+          className="text-[10px] tracking-[0.35em] uppercase mb-10"
           style={{
             fontFamily: "var(--font-sans)",
             color: "rgba(255,255,255,0.65)",
@@ -47,7 +47,7 @@ export default function Hero() {
         </h1>
 
         <p
-          className="mt-8 max-w-[400px] leading-[1.9]"
+          className="mt-12 max-w-[400px] leading-[2.1]"
           style={{
             fontFamily: "var(--font-sans)",
             fontSize: "13px",
@@ -61,7 +61,7 @@ export default function Hero() {
 
         <Link
           href="#shop"
-          className="mt-12 inline-block text-[11px] tracking-[0.28em] uppercase font-normal hover:opacity-80 transition-opacity duration-300"
+          className="mt-16 inline-block text-[11px] tracking-[0.28em] uppercase font-normal hover:opacity-80 transition-opacity duration-300"
           style={{
             fontFamily: "var(--font-sans)",
             background: "var(--terracotta)",

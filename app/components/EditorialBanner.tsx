@@ -18,10 +18,10 @@ export default function EditorialBanner() {
       {/* Dark overlay */}
       <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.35)" }} />
 
-      {/* Content — absolutely centered, clear padding from top/bottom edges */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 py-24">
+      {/* Content — top-aligned, pushed down from top edge */}
+      <div className="absolute inset-0 flex flex-col items-center justify-start text-center px-8 pt-[160px] pb-24">
         <p
-          className="text-[10px] tracking-[0.35em] uppercase mb-7"
+          className="text-[10px] tracking-[0.35em] uppercase mb-10"
           style={{
             fontFamily: "var(--font-sans)",
             color: "rgba(255,255,255,0.65)",
@@ -49,7 +49,7 @@ export default function EditorialBanner() {
 
         <Link
           href="#shop"
-          className="mt-12 inline-block text-[11px] tracking-[0.28em] uppercase font-normal hover:bg-white hover:text-black transition-all duration-300"
+          className="mt-16 inline-block text-[11px] tracking-[0.28em] uppercase font-normal hover:bg-white hover:text-black transition-all duration-300"
           style={{
             fontFamily: "var(--font-sans)",
             color: "#ffffff",
