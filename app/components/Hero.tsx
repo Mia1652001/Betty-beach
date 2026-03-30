@@ -46,19 +46,6 @@ export default function Hero() {
           Island Collection
         </h1>
 
-        <p
-          className="mt-12 max-w-[400px] leading-[2.1]"
-          style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "13px",
-            color: "rgba(255,255,255,0.6)",
-            fontWeight: 300,
-            letterSpacing: "0.04em",
-          }}
-        >
-          Crafted for women who move between sunsets, salt water, and slow mornings.
-        </p>
-
         <Link
           href="#shop"
           className="mt-16 inline-block text-[11px] tracking-[0.28em] uppercase font-normal hover:opacity-80 transition-opacity duration-300"
