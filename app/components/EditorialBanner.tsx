@@ -47,7 +47,7 @@ export default function EditorialBanner() {
 
         <Link
           href="#shop"
-          className="mt-16 inline-block text-[11px] tracking-[0.28em] uppercase font-normal hover:bg-white hover:text-black transition-all duration-300"
+          className="mt-24 inline-block text-[11px] tracking-[0.28em] uppercase font-normal hover:bg-white hover:text-black transition-all duration-300"
           style={{
             fontFamily: "var(--font-sans)",
             color: "#ffffff",
