@@ -54,7 +54,7 @@ export default function About() {
                 className="text-[13.5px] font-light leading-[1.9]"
                 style={{ fontFamily: "var(--font-sans)", color: "var(--warm-gray)" }}
               >
-                Betty Beach was born from long mornings on the water and the belief that what you
+                <span style={{ fontFamily: "var(--font-heading)", fontStyle: "italic" }}>Betty Beach</span> was born from long mornings on the water and the belief that what you
                 wear should feel as effortless as the places you wear it. We design for women who
                 move between worlds — the beach, the café, the cobblestone street.
               </p>
