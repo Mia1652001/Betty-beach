@@ -42,9 +42,7 @@ export default function EditorialBanner() {
             letterSpacing: "0.02em",
           }}
         >
-          Golden Hour
-          <br />
-          Is Here
+          Betty Beach
         </h2>
 
         <Link
