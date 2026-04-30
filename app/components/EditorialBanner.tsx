@@ -53,6 +53,7 @@ export default function EditorialBanner() {
             color: "#ffffff",
             padding: "13px 36px",
             border: "1px solid rgba(255,255,255,0.65)",
+            marginTop: "60px",
           }}
         >
           SHOP THE COLLECTION
