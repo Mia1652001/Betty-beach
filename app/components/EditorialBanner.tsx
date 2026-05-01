@@ -21,7 +21,7 @@ export default function EditorialBanner() {
       {/* Content — top-aligned, pushed down from top edge */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
         <p
-          className="text-[10px] tracking-[0.35em] uppercase mb-[60px]"
+          className="text-[10px] tracking-[0.35em] uppercase mb-10"
           style={{
             fontFamily: "var(--font-sans)",
             color: "rgba(255,255,255,0.65)",
