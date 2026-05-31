@@ -140,25 +140,7 @@ export default function FeaturedProducts() {
 
         {/* Section header */}
         <div className="flex items-end justify-between mb-16 md:mb-24">
-          <div>
-            <p
-              className="text-[9px] tracking-[0.35em] uppercase mb-5"
-              style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
-            >
-              The Collection
-            </p>
-            <h2
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontWeight: 400,
-                fontSize: "clamp(28px, 3.5vw, 42px)",
-                lineHeight: 1.1,
-                color: "var(--text)",
-              }}
-            >
-              Island Dreams
-            </h2>
-          </div>
+          <div />
           <Link
             href="#"
             className="text-[10px] tracking-[0.2em] uppercase hover:opacity-50 transition-opacity duration-200 pb-0.5 hidden md:block"
