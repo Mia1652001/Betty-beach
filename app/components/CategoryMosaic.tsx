@@ -7,18 +7,21 @@ const categories = [
     href: "#shop",
     src: "/hero2.jpg",
     alt: "Shop Swimwear",
+    center: false,
   },
   {
     label: "SHOP RESORT WEAR",
     href: "#shop",
     src: "/product 1.jpeg",
     alt: "Shop Resort Wear",
+    center: true,
   },
   {
     label: "SHOP DRESSES",
     href: "#shop",
     src: "/product 2.jpg",
     alt: "Shop Dresses",
+    center: false,
   },
 ];
 
@@ -52,7 +55,7 @@ export default function CategoryMosaic() {
             />
 
             {/* Label */}
-            <div className="absolute inset-0 flex items-end justify-center pb-10">
+            <div className={`absolute inset-0 flex justify-center ${cat.center ? "items-center" : "items-end pb-10"}`}>
               <span
                 className="text-[11px] tracking-[0.22em] uppercase"
                 style={{
