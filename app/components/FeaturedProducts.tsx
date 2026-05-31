@@ -76,19 +76,6 @@ function ProductCard({ product }: { product: Product }) {
           className={`transition-transform duration-700 ease-out ${hovered ? "scale-[1.04]" : "scale-100"}`}
         />
 
-        {/* Tag */}
-        {product.tag && (
-          <span
-            className="absolute top-4 left-4 text-[9px] tracking-[0.15em] uppercase px-2.5 py-1 font-normal z-10"
-            style={{
-              fontFamily: "var(--font-sans)",
-              background: "#ffffff",
-              color: "var(--text)",
-            }}
-          >
-            {product.tag}
-          </span>
-        )}
 
         {/* Quick Add — slides up on hover */}
         <div
