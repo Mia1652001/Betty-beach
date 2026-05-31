@@ -20,7 +20,7 @@ export default function AsSeenOn() {
     <section style={{ background: "var(--sand-light)", padding: "100px 0" }}>
 
       {/* Header */}
-      <div className="text-center" style={{ padding: "0 40px", marginBottom: "50px" }}>
+      <div className="text-center" style={{ padding: "0 40px", marginBottom: "40px" }}>
 <h2
           style={{
             fontFamily: "var(--font-heading)",
