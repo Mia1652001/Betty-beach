@@ -40,8 +40,8 @@ export default function AsSeenOn() {
 
         {/* Collage grid */}
         <div
-          className="grid grid-cols-3 md:grid-cols-4"
-          style={{ gap: "10px" }}
+          className="grid grid-cols-4 md:grid-cols-8"
+          style={{ gap: "0px" }}
         >
           {photos.map((photo, i) => (
             <div
