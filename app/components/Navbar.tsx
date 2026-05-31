@@ -67,33 +67,7 @@ export default function Navbar() {
             Betty Beach
           </Link>
 
-          {/* Center nav — desktop */}
-          <div className="hidden md:flex items-center gap-9 absolute left-1/2 -translate-x-1/2">
-            {navItems.map((item) =>
-              item.hasDropdown ? (
-                <button
-                  key={item.label}
-                  onMouseEnter={() => setShopOpen(true)}
-                  className="text-[11px] tracking-[0.12em] uppercase hover:opacity-50 transition-opacity duration-200"
-                  style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
-                >
-                  {item.label}
-                </button>
-              ) : (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onMouseEnter={() => setShopOpen(false)}
-                  className="text-[11px] tracking-[0.12em] uppercase hover:opacity-50 transition-opacity duration-200"
-                  style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
-                >
-                  {item.label}
-                </Link>
-              )
-            )}
-          </div>
-
-          {/* Right icons — desktop */}
+{/* Right icons — desktop */}
           <div className="hidden md:flex items-center gap-6">
             {/* Search */}
             <button aria-label="Search" className="hover:opacity-50 transition-opacity duration-200">
@@ -150,25 +124,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Full-width Shop dropdown */}
-        <div
-          className={`w-full overflow-hidden transition-all duration-300 ${shopOpen ? "max-h-40 border-t opacity-100" : "max-h-0 opacity-0"}`}
-          style={{ borderColor: "var(--border)", background: "#ffffff" }}
-        >
-          <div className="w-full max-w-[1440px] mx-auto flex items-center gap-12" style={{ padding: "24px 40px" }}>
-            {shopCategories.map((cat) => (
-              <Link
-                key={cat.label}
-                href={cat.href}
-                onClick={() => setShopOpen(false)}
-                className="text-[11px] tracking-[0.12em] uppercase hover:opacity-50 transition-opacity duration-200 whitespace-nowrap"
-                style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
-              >
-                {cat.label}
-              </Link>
-            ))}
-          </div>
-        </div>
       </nav>
 
       {/* Slide-in drawer */}
