@@ -183,7 +183,7 @@ export default function Navbar() {
         {/* Drawer panel */}
         <div
           className={`fixed top-0 right-0 h-full z-50 flex flex-col transition-transform duration-300 ease-in-out ${drawerOpen ? "translate-x-0" : "translate-x-full"}`}
-          style={{ width: "380px", background: "#FAF8F4", overflowY: "auto" }}
+          style={{ width: "380px", background: "#ffffff", overflowY: "auto" }}
         >
           {/* Top bar — logo left, close right */}
           <div className="flex items-center justify-between" style={{ padding: "20px 24px" }}>
