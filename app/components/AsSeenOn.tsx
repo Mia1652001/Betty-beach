@@ -9,6 +9,10 @@ const photos = [
   { src: "/product 2.jpg",   alt: "Customer wearing Betty Beach outfit"        },
   { src: "/hero1.jpeg",      alt: "Customer wearing Betty Beach at the beach"  },
   { src: "/product3.jpg",    alt: "Customer wearing Betty Beach swimwear"      },
+  { src: "/product 6.jpg",   alt: "Customer wearing Betty Beach dress"         },
+  { src: "/hero2.jpg",       alt: "Customer wearing Betty Beach bikini"        },
+  { src: "/product 5.jpg",   alt: "Customer wearing Betty Beach resort wear"   },
+  { src: "/product 7.jpg",   alt: "Customer wearing Betty Beach one-piece"     },
 ];
 
 export default function AsSeenOn() {
@@ -40,7 +44,7 @@ export default function AsSeenOn() {
 
         {/* Collage grid — 4 columns × 2 rows, all same size */}
         <div
-          className="grid grid-cols-4"
+          className="grid grid-cols-6"
           style={{ gap: 0 }}
         >
           {photos.map((photo, i) => (
