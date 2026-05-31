@@ -66,12 +66,13 @@ export default function Navbar() {
             >
               SEARCH
             </button>
-            <button
+            <Link
+              href="/login"
               className="text-[11px] tracking-[0.1em] uppercase hover:opacity-50 transition-opacity duration-200"
               style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
             >
               LOG IN
-            </button>
+            </Link>
             <button
               className="text-[11px] tracking-[0.1em] uppercase hover:opacity-50 transition-opacity duration-200"
               style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
