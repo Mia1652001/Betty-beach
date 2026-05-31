@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const categories = [
   {
-    label: "SHOP SWIMWEAR",
+    label: "",
     href: "#shop",
     src: "/hero2.jpg",
     alt: "Shop Swimwear",
@@ -17,7 +17,7 @@ const categories = [
     center: true,
   },
   {
-    label: "SHOP DRESSES",
+    label: "",
     href: "#shop",
     src: "/product 2.jpg",
     alt: "Shop Dresses",
