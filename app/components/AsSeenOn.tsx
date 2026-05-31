@@ -20,7 +20,7 @@ export default function AsSeenOn() {
     <section style={{ background: "var(--sand-light)", padding: "100px 0" }}>
 
       {/* Header */}
-      <div className="text-center mb-14" style={{ padding: "0 40px" }}>
+      <div className="text-center mb-24" style={{ padding: "0 40px" }}>
         <p
           className="text-[9px] tracking-[0.45em] uppercase mb-4"
           style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
