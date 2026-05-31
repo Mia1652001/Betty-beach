@@ -220,8 +220,8 @@ export default function Navbar() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setDrawerOpen(false)}
-                className="py-10 text-[14px] tracking-[0.18em] uppercase hover:opacity-50 transition-opacity border-b"
-                style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400, borderColor: "var(--border)" }}
+                className="text-[14px] tracking-[0.18em] uppercase hover:opacity-50 transition-opacity"
+                style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400, padding: "60px 0 0" }}
               >
                 {item.label}
               </Link>
