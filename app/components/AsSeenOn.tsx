@@ -18,61 +18,56 @@ const photos = [
 export default function AsSeenOn() {
   return (
     <section style={{ background: "var(--sand-light)", padding: "100px 0" }}>
-      <div className="w-full max-w-[1440px] mx-auto" style={{ padding: "0 40px" }}>
 
-        {/* Header */}
-        <div className="text-center mb-14">
-          <p
-            className="text-[9px] tracking-[0.45em] uppercase mb-4"
-            style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
-          >
-            Real People, Real Betty Beach
-          </p>
-          <h2
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontStyle: "italic",
-              fontWeight: 400,
-              fontSize: "clamp(26px, 3vw, 42px)",
-              color: "var(--text)",
-              lineHeight: 1.1,
-            }}
-          >
-            As Seen On
-          </h2>
-        </div>
-
-        {/* Collage grid — 4 columns × 2 rows, all same size */}
-        <div
-          className="grid grid-cols-6"
-          style={{ gap: 0 }}
-        >
-          {photos.map((photo, i) => (
-            <div
-              key={i}
-              className="relative overflow-hidden"
-              style={{ aspectRatio: "3/4" }}
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                style={{ objectFit: "cover", objectPosition: "center top" }}
-                className="transition-transform duration-700 ease-out hover:scale-[1.05]"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Tag line */}
+      {/* Header */}
+      <div className="text-center mb-14" style={{ padding: "0 40px" }}>
         <p
-          className="text-center mt-10 text-[11px] tracking-[0.22em] uppercase"
+          className="text-[9px] tracking-[0.45em] uppercase mb-4"
           style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
         >
-          Tag <span style={{ color: "var(--text)" }}>@bettybeach</span> to be featured
+          Real People, Real Betty Beach
         </p>
-
+        <h2
+          style={{
+            fontFamily: "var(--font-heading)",
+            fontStyle: "italic",
+            fontWeight: 400,
+            fontSize: "clamp(26px, 3vw, 42px)",
+            color: "var(--text)",
+            lineHeight: 1.1,
+          }}
+        >
+          As Seen On
+        </h2>
       </div>
+
+      {/* Full-width grid — 6 columns × 2 rows, no gaps */}
+      <div className="w-full grid grid-cols-6" style={{ gap: 0 }}>
+        {photos.map((photo, i) => (
+          <div
+            key={i}
+            className="relative overflow-hidden"
+            style={{ aspectRatio: "3/4" }}
+          >
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              style={{ objectFit: "cover", objectPosition: "center top" }}
+              className="transition-transform duration-700 ease-out hover:scale-[1.05]"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Tag line */}
+      <p
+        className="text-center mt-10 text-[11px] tracking-[0.22em] uppercase"
+        style={{ padding: "0 40px", fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
+      >
+        Tag <span style={{ color: "var(--text)" }}>@bettybeach</span> to be featured
+      </p>
+
     </section>
   );
 }
