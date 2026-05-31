@@ -21,13 +21,7 @@ export default function AsSeenOn() {
 
       {/* Header */}
       <div className="text-center" style={{ padding: "0 40px", marginBottom: "50px" }}>
-        <p
-          className="text-[9px] tracking-[0.45em] uppercase mb-4"
-          style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
-        >
-          Real People, Real Betty Beach
-        </p>
-        <h2
+<h2
           style={{
             fontFamily: "var(--font-heading)",
             fontStyle: "italic",
