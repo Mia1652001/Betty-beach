@@ -4,10 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navItems = [
-  { label: "SHOP", href: "#shop" },
-  { label: "OUR STORY", href: "#about" },
-  { label: "SIZE GUIDE", href: "#size-guide" },
-  { label: "CUSTOMER CARE", href: "#contact" },
+  { label: "SHOP", href: "/shop" },
+  { label: "OUR STORY", href: "/our-story" },
+  { label: "SIZE GUIDE", href: "/size-guide" },
+  { label: "CUSTOMER CARE", href: "/customer-care" },
 ];
 
 export default function Navbar() {
