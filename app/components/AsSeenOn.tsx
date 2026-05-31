@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 const photos = [
-  { src: "/hero2.jpg",       alt: "Customer wearing Betty Beach bikini",       aspect: "2/3",  rotate: "-1.5deg" },
-  { src: "/product 5.jpg",   alt: "Customer wearing Betty Beach resort wear",  aspect: "3/4",  rotate: "1deg"    },
-  { src: "/product 6.jpg",   alt: "Customer wearing Betty Beach dress",        aspect: "4/5",  rotate: "-0.8deg" },
-  { src: "/product 1.jpeg",  alt: "Customer wearing Betty Beach swimwear",     aspect: "3/4",  rotate: "1.5deg"  },
-  { src: "/product 7.jpg",   alt: "Customer wearing Betty Beach one-piece",    aspect: "2/3",  rotate: "-1deg"   },
-  { src: "/product 2.jpg",   alt: "Customer wearing Betty Beach outfit",       aspect: "3/4",  rotate: "0.8deg"  },
-  { src: "/hero1.jpeg",      alt: "Customer wearing Betty Beach at the beach", aspect: "4/5",  rotate: "-1.2deg" },
-  { src: "/product3.jpg",    alt: "Customer wearing Betty Beach swimwear",     aspect: "3/4",  rotate: "1.2deg"  },
+  { src: "/hero2.jpg",       alt: "Customer wearing Betty Beach bikini"        },
+  { src: "/product 5.jpg",   alt: "Customer wearing Betty Beach resort wear"   },
+  { src: "/product 6.jpg",   alt: "Customer wearing Betty Beach dress"         },
+  { src: "/product 1.jpeg",  alt: "Customer wearing Betty Beach swimwear"      },
+  { src: "/product 7.jpg",   alt: "Customer wearing Betty Beach one-piece"     },
+  { src: "/product 2.jpg",   alt: "Customer wearing Betty Beach outfit"        },
+  { src: "/hero1.jpeg",      alt: "Customer wearing Betty Beach at the beach"  },
+  { src: "/product3.jpg",    alt: "Customer wearing Betty Beach swimwear"      },
 ];
 
 export default function AsSeenOn() {
@@ -38,20 +38,16 @@ export default function AsSeenOn() {
           </h2>
         </div>
 
-        {/* Collage grid */}
+        {/* Collage grid — 4 columns × 2 rows, all same size */}
         <div
-          className="grid grid-cols-4 md:grid-cols-8"
-          style={{ gap: "0px" }}
+          className="grid grid-cols-4"
+          style={{ gap: 0 }}
         >
           {photos.map((photo, i) => (
             <div
               key={i}
               className="relative overflow-hidden"
-              style={{
-                aspectRatio: photo.aspect,
-                transform: `rotate(${photo.rotate})`,
-                boxShadow: "0 2px 12px rgba(0,0,0,0.10)",
-              }}
+              style={{ aspectRatio: "3/4" }}
             >
               <Image
                 src={photo.src}
@@ -66,7 +62,7 @@ export default function AsSeenOn() {
 
         {/* Tag line */}
         <p
-          className="text-center mt-12 text-[11px] tracking-[0.22em] uppercase"
+          className="text-center mt-10 text-[11px] tracking-[0.22em] uppercase"
           style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
         >
           Tag <span style={{ color: "var(--text)" }}>@bettybeach</span> to be featured
