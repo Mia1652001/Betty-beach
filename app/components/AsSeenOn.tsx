@@ -19,22 +19,6 @@ export default function AsSeenOn() {
   return (
     <section style={{ background: "var(--sand-light)", padding: "100px 0" }}>
 
-      {/* Header */}
-      <div className="text-center" style={{ padding: "0 40px", marginBottom: "40px" }}>
-        <h2
-          style={{
-            fontFamily: "var(--font-heading)",
-            fontStyle: "italic",
-            fontWeight: 400,
-            fontSize: "clamp(26px, 3vw, 42px)",
-            color: "var(--text)",
-            lineHeight: 1.1,
-          }}
-        >
-          As Seen On
-        </h2>
-      </div>
-
       {/* Tag line — above pictures, left aligned */}
       <p
         className="text-[11px] tracking-[0.22em] uppercase"

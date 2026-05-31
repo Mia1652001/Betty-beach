@@ -10,7 +10,8 @@
       "Bash(npm run:*)",
       "Bash(npx next:*)",
       "WebFetch(domain:indahclothing.com)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(git config:*)"
     ]
   }
 }
