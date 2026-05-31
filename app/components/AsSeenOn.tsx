@@ -21,7 +21,7 @@ export default function AsSeenOn() {
 
       {/* Header */}
       <div className="text-center" style={{ padding: "0 40px", marginBottom: "40px" }}>
-<h2
+        <h2
           style={{
             fontFamily: "var(--font-heading)",
             fontStyle: "italic",
@@ -34,6 +34,14 @@ export default function AsSeenOn() {
           As Seen On
         </h2>
       </div>
+
+      {/* Tag line — above pictures, left aligned */}
+      <p
+        className="text-[11px] tracking-[0.22em] uppercase"
+        style={{ padding: "0 40px", marginBottom: "16px", fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
+      >
+        Tag <span style={{ color: "var(--text)" }}>@bettybeach</span> to be featured
+      </p>
 
       {/* Full-width grid — 6 columns × 2 rows, no gaps */}
       <div className="w-full grid grid-cols-6" style={{ gap: 0 }}>
@@ -53,14 +61,6 @@ export default function AsSeenOn() {
           </div>
         ))}
       </div>
-
-      {/* Tag line */}
-      <p
-        className="text-center mt-10 text-[11px] tracking-[0.22em] uppercase"
-        style={{ padding: "0 40px", fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
-      >
-        Tag <span style={{ color: "var(--text)" }}>@bettybeach</span> to be featured
-      </p>
 
     </section>
   );
