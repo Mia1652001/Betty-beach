@@ -3,11 +3,25 @@ import Image from "next/image";
 
 const categories = [
   {
+    label: "SHOP SWIMWEAR",
+    href: "#shop",
+    src: "/hero2.jpg",
+    alt: "Shop Swimwear",
+    center: false,
+  },
+  {
     label: "SHOP RESORT WEAR",
     href: "#shop",
     src: "/product 1.jpeg",
     alt: "Shop Resort Wear",
     center: true,
+  },
+  {
+    label: "SHOP DRESSES",
+    href: "#shop",
+    src: "/product 2.jpg",
+    alt: "Shop Dresses",
+    center: false,
   },
 ];
 
@@ -16,7 +30,7 @@ export default function CategoryMosaic() {
     <section className="w-full">
       <div
         className="grid"
-        style={{ gridTemplateColumns: "repeat(1, minmax(0, 1fr))", gap: 0 }}
+        style={{ gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 0 }}
       >
         {categories.map((cat) => (
           <Link
