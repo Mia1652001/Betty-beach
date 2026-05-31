@@ -3,15 +3,16 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const navItems = [
-  { label: "SHOP", href: "/shop" },
-  { label: "OUR STORY", href: "/our-story" },
-  { label: "SIZE GUIDE", href: "/size-guide" },
-  { label: "CUSTOMER CARE", href: "/customer-care" },
+const dropdownItems = [
+  { label: "Shop", href: "/shop" },
+  { label: "Our Story", href: "/our-story" },
+  { label: "Size Guide", href: "/size-guide" },
+  { label: "Customer Care", href: "/customer-care" },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <>
@@ -27,7 +28,7 @@ export default function Navbar() {
           className="w-full h-full flex items-center justify-between"
           style={{ padding: "0 40px" }}
         >
-          {/* Logo — left aligned, Bodoni Moda italic */}
+          {/* Logo */}
           <Link
             href="/"
             style={{
@@ -44,18 +45,49 @@ export default function Navbar() {
             Betty Beach
           </Link>
 
-          {/* Center nav — desktop */}
-          <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-[11px] tracking-[0.1em] uppercase hover:opacity-50 transition-opacity duration-200"
-                style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
+          {/* Center — dropdown trigger */}
+          <div
+            className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2"
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            <button
+              className="text-[11px] tracking-[0.1em] uppercase hover:opacity-50 transition-opacity duration-200 flex items-center gap-2"
+              style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
+            >
+              MENU
+              <span
+                className={`inline-block transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
+                style={{ fontSize: "8px", lineHeight: 1 }}
               >
-                {item.label}
-              </Link>
-            ))}
+                ▾
+              </span>
+            </button>
+
+            {/* Dropdown */}
+            <div
+              className={`absolute top-full left-1/2 -translate-x-1/2 transition-all duration-200 ${
+                dropdownOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-1"
+              }`}
+              style={{
+                background: "#ffffff",
+                border: "1px solid var(--border)",
+                minWidth: "180px",
+                marginTop: "1px",
+              }}
+            >
+              {dropdownItems.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setDropdownOpen(false)}
+                  className="block px-6 py-3 text-[11px] tracking-[0.1em] uppercase hover:opacity-50 transition-opacity duration-200"
+                  style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Right — desktop */}
@@ -87,15 +119,9 @@ export default function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            <span
-              className={`block w-[22px] h-px bg-black transition-all duration-300 origin-center ${mobileOpen ? "rotate-45 translate-y-[3px]" : ""}`}
-            />
-            <span
-              className={`block w-[22px] h-px bg-black transition-all duration-300 ${mobileOpen ? "opacity-0 scale-x-0" : ""}`}
-            />
-            <span
-              className={`block w-[22px] h-px bg-black transition-all duration-300 origin-center ${mobileOpen ? "-rotate-45 -translate-y-[3px]" : ""}`}
-            />
+            <span className={`block w-[22px] h-px bg-black transition-all duration-300 origin-center ${mobileOpen ? "rotate-45 translate-y-[3px]" : ""}`} />
+            <span className={`block w-[22px] h-px bg-black transition-all duration-300 ${mobileOpen ? "opacity-0 scale-x-0" : ""}`} />
+            <span className={`block w-[22px] h-px bg-black transition-all duration-300 origin-center ${mobileOpen ? "-rotate-45 -translate-y-[3px]" : ""}`} />
           </button>
         </div>
       </nav>
@@ -122,7 +148,7 @@ export default function Navbar() {
         >
           Betty Beach
         </Link>
-        {[...navItems, { label: "CART (0)", href: "#" }].map((item) => (
+        {[...dropdownItems, { label: "Cart (0)", href: "#" }].map((item) => (
           <Link
             key={item.label}
             href={item.href}
