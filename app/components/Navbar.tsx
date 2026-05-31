@@ -185,8 +185,22 @@ export default function Navbar() {
           className={`fixed top-0 right-0 h-full z-50 flex flex-col transition-transform duration-300 ease-in-out ${drawerOpen ? "translate-x-0" : "translate-x-full"}`}
           style={{ width: "380px", background: "#ffffff", overflowY: "auto" }}
         >
-          {/* Close button */}
-          <div className="flex justify-end" style={{ padding: "20px 24px 0" }}>
+          {/* Top bar — logo left, close right */}
+          <div className="flex items-center justify-between" style={{ padding: "20px 24px" }}>
+            <Link
+              href="/"
+              onClick={() => setDrawerOpen(false)}
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "18px",
+                letterSpacing: "0.06em",
+                color: "var(--text)",
+              }}
+            >
+              Betty Beach
+            </Link>
             <button
               onClick={() => setDrawerOpen(false)}
               aria-label="Close menu"
@@ -199,8 +213,8 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Drawer links */}
-          <div className="flex flex-col" style={{ padding: "32px 24px" }}>
+          {/* Drawer links — pushed lower */}
+          <div className="flex flex-col" style={{ padding: "60px 24px 32px" }}>
             {drawerItems.map((item) => (
               <Link
                 key={item.label}
