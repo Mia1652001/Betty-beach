@@ -18,6 +18,8 @@
   1. `git add .`
   2. `git commit -m "<short description>"`
   3. `git push <remote> main`
+  4. `git commit --allow-empty -m "redeploy"`
+  5. `git push <remote> main` (second push to force Vercel to deploy)
 
 ## Skills
 
