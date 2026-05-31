@@ -10,7 +10,7 @@ const categories = [
     center: false,
   },
   {
-    label: "SHOP RESORT WEAR",
+    label: "Shop swim",
     href: "#shop",
     src: "/product 1.jpeg",
     alt: "Shop Resort Wear",
