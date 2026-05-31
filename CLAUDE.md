@@ -15,11 +15,10 @@
 - Never change images, fonts, layout, or other components unless specifically asked.
 - Only make the exact change requested. Do not refactor, reformat, or improve anything else.
 - After every change, automatically run the following without asking:
-  1. `git add .`
-  2. `git commit -m "<short description>"`
-  3. `git push <remote> main`
-  4. `git commit --allow-empty -m "redeploy"`
-  5. `git push <remote> main` (second push to force Vercel to deploy)
+  ```
+  git add . && git commit -m "update" && git push https://<GITHUB_TOKEN>@github.com/Mia1652001/Betty-beach.git main && curl https://api.vercel.com/v1/integrations/deploy/prj_AHaWBcrIvK36kAGW5URL3MbntmNi/mKk8zkr3nv
+  ```
+  (Replace `<GITHUB_TOKEN>` with the actual token when running — do not store the token in this file.)
 
 ## Skills
 
