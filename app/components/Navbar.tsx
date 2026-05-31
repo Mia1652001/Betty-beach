@@ -20,10 +20,12 @@ const navItems = [
 ];
 
 const drawerItems = [
-  { label: "New Collection", href: "/shop" },
-  { label: "Our Story",      href: "/our-story" },
-  { label: "Size Guide",     href: "/size-guide" },
-  { label: "Customer Care",  href: "/customer-care" },
+  { label: "Shop",          href: "/shop" },
+  { label: "Our Story",     href: "/our-story" },
+  { label: "Size Guide",    href: "/size-guide" },
+  { label: "Customer Care", href: "/customer-care" },
+  { label: "Log In",        href: "/login" },
+  { label: "Register",      href: "/login" },
 ];
 
 const drawerShopItems = [
@@ -199,46 +201,7 @@ export default function Navbar() {
 
           {/* Drawer links */}
           <div className="flex flex-col" style={{ padding: "32px 24px" }}>
-
-            {/* New Collection */}
-            <Link
-              href="/shop"
-              onClick={() => setDrawerOpen(false)}
-              className="py-4 text-[11px] tracking-[0.18em] uppercase hover:opacity-50 transition-opacity border-b"
-              style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400, borderColor: "var(--border)" }}
-            >
-              New Collection
-            </Link>
-
-            {/* Shop — accordion */}
-            <div className="border-b" style={{ borderColor: "var(--border)" }}>
-              <button
-                onClick={() => setShopExpanded(!shopExpanded)}
-                className="w-full flex items-center justify-between py-4 text-[11px] tracking-[0.18em] uppercase hover:opacity-50 transition-opacity"
-                style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
-              >
-                Shop
-                <span style={{ fontSize: "10px" }}>{shopExpanded ? "−" : "+"}</span>
-              </button>
-              {shopExpanded && (
-                <div className="flex flex-col pb-3">
-                  {drawerShopItems.map((item) => (
-                    <Link
-                      key={item}
-                      href="/shop"
-                      onClick={() => setDrawerOpen(false)}
-                      className="py-2.5 pl-4 text-[11px] tracking-[0.12em] uppercase hover:opacity-50 transition-opacity"
-                      style={{ fontFamily: "var(--font-sans)", color: "var(--text-mid)", fontWeight: 300 }}
-                    >
-                      {item}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Remaining items */}
-            {drawerItems.slice(1).map((item) => (
+            {drawerItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
@@ -249,26 +212,6 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
-
-            {/* Account */}
-            <div className="mt-8 flex flex-col gap-3">
-              <Link
-                href="/login"
-                onClick={() => setDrawerOpen(false)}
-                className="text-[11px] tracking-[0.18em] uppercase hover:opacity-50 transition-opacity"
-                style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
-              >
-                Log In
-              </Link>
-              <Link
-                href="/login"
-                onClick={() => setDrawerOpen(false)}
-                className="text-[11px] tracking-[0.18em] uppercase hover:opacity-50 transition-opacity"
-                style={{ fontFamily: "var(--font-sans)", color: "var(--text-mid)", fontWeight: 300 }}
-              >
-                Create Account
-              </Link>
-            </div>
           </div>
         </div>
       </>
