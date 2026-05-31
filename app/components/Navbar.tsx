@@ -45,51 +45,6 @@ export default function Navbar() {
             Betty Beach
           </Link>
 
-          {/* Center — dropdown trigger */}
-          <div
-            className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
-            <button
-              className="text-[11px] tracking-[0.1em] uppercase hover:opacity-50 transition-opacity duration-200 flex items-center gap-2"
-              style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
-            >
-              MENU
-              <span
-                className={`inline-block transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
-                style={{ fontSize: "8px", lineHeight: 1 }}
-              >
-                ▾
-              </span>
-            </button>
-
-            {/* Dropdown */}
-            <div
-              className={`absolute top-full left-1/2 -translate-x-1/2 transition-all duration-200 ${
-                dropdownOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-1"
-              }`}
-              style={{
-                background: "#ffffff",
-                border: "1px solid var(--border)",
-                minWidth: "180px",
-                marginTop: "1px",
-              }}
-            >
-              {dropdownItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setDropdownOpen(false)}
-                  className="block px-6 py-3 text-[11px] tracking-[0.1em] uppercase hover:opacity-50 transition-opacity duration-200"
-                  style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
           {/* Right — desktop */}
           <div className="hidden md:flex items-center gap-7">
             <button
@@ -111,6 +66,44 @@ export default function Navbar() {
             >
               CART&nbsp;0
             </button>
+
+            {/* Hamburger + dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="flex flex-col justify-center gap-[5px] p-1 hover:opacity-50 transition-opacity duration-200"
+                aria-label="Toggle menu"
+              >
+                <span className="block w-[22px] h-px bg-black" />
+                <span className="block w-[22px] h-px bg-black" />
+                <span className="block w-[22px] h-px bg-black" />
+              </button>
+
+              {/* Dropdown */}
+              {dropdownOpen && (
+                <div
+                  className="absolute right-0 top-full mt-2"
+                  style={{
+                    background: "#ffffff",
+                    border: "1px solid var(--border)",
+                    minWidth: "180px",
+                    zIndex: 100,
+                  }}
+                >
+                  {dropdownItems.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setDropdownOpen(false)}
+                      className="block px-6 py-3 text-[11px] tracking-[0.1em] uppercase hover:opacity-50 transition-opacity duration-200"
+                      style={{ fontFamily: "var(--font-sans)", color: "var(--text)", fontWeight: 400 }}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile hamburger */}
