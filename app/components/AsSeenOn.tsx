@@ -22,7 +22,7 @@ export default function AsSeenOn() {
       {/* Tag line — above pictures, left aligned */}
       <p
         className="text-[11px] tracking-[0.22em] uppercase"
-        style={{ padding: "0 40px", marginBottom: "16px", fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
+        style={{ padding: "0 40px 0 20px", marginBottom: "16px", fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
       >
         Tag <span style={{ color: "var(--text)" }}>@bettybeach</span> to be featured
       </p>
