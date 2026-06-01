@@ -93,8 +93,9 @@ function ProductCard({ product }: { product: Product }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div
-      className="cursor-pointer"
+    <Link
+      href={`/shop/${product.id}`}
+      className="cursor-pointer block"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -148,7 +149,7 @@ function ProductCard({ product }: { product: Product }) {
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
