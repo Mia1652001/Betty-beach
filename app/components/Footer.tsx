@@ -50,7 +50,7 @@ export default function Footer() {
               className="text-[13px] leading-[1.8]"
               style={{ fontFamily: "var(--font-sans)", color: "var(--text-mid)", fontWeight: 300 }}
             >
-              Free shipping on your next <span style={{ fontFamily: "var(--font-heading)", fontStyle: "italic" }}>Betty Beach</span> order.
+              Free shipping on your next Betty Beach order.
             </p>
           </div>
 
