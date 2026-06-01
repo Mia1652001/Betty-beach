@@ -11,7 +11,8 @@
       "Bash(npx next:*)",
       "WebFetch(domain:indahclothing.com)",
       "Bash(git reset:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "WebFetch(domain:www.camiandjax.com)"
     ]
   }
 }
