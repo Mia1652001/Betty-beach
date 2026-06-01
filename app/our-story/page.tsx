@@ -1,4 +1,3 @@
-import AnnouncementBar from "../components/AnnouncementBar";
 import Navbar from "../components/Navbar";
 import About from "../components/About";
 import Footer from "../components/Footer";
@@ -11,7 +10,6 @@ export const metadata = {
 export default function OurStoryPage() {
   return (
     <main>
-      <AnnouncementBar />
       <Navbar />
       <About />
       <Footer />

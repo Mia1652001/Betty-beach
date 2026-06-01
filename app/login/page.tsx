@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import AnnouncementBar from "../components/AnnouncementBar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -16,7 +15,6 @@ export default function LoginPage() {
 
   return (
     <main>
-      <AnnouncementBar />
       <Navbar />
 
       <section style={{ background: "var(--bg)", padding: "120px 0" }}>
