@@ -4,21 +4,21 @@ import Image from "next/image";
 const categories = [
   {
     label: "",
-    href: "#shop",
+    href: "/shop",
     src: "/hero2.jpg",
     alt: "Shop Swimwear",
     center: false,
   },
   {
     label: "Shop swim",
-    href: "#shop",
+    href: "/shop",
     src: "/product 1.jpeg",
     alt: "Shop Resort Wear",
     center: true,
   },
   {
     label: "",
-    href: "#shop",
+    href: "/shop",
     src: "/product 2.jpg",
     alt: "Shop Dresses",
     center: false,

@@ -47,7 +47,7 @@ export default function EditorialBanner() {
         </h2>
 
         <Link
-          href="#shop"
+          href="/shop"
           className="mt-24 inline-block text-[11px] tracking-[0.28em] uppercase font-normal hover:bg-white hover:text-black transition-all duration-300"
           style={{
             fontFamily: "var(--font-sans)",
