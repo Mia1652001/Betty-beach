@@ -17,7 +17,7 @@ const photos = [
 
 export default function AsSeenOn() {
   return (
-    <section style={{ background: "var(--sand-light)", padding: "100px 0 20px" }}>
+    <section style={{ background: "var(--sand-light)", padding: "100px 0 0" }}>
 
       {/* Tag line — above pictures, left aligned */}
       <p
