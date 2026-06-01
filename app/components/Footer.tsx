@@ -44,7 +44,7 @@ export default function Footer() {
                 lineHeight: 1.1,
               }}
             >
-              Join the Betty Beach Family
+              Join the <span style={{ fontFamily: "var(--font-heading)", fontStyle: "italic" }}>Betty Beach</span> Family
             </h3>
             <p
               className="text-[13px] leading-[1.8]"
