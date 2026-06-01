@@ -311,16 +311,16 @@ export default function ProductPage() {
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-col gap-3" style={{ marginBottom: "40px" }}>
+              <div className="flex flex-col gap-2" style={{ marginBottom: "40px" }}>
                 <button
-                  className="w-full py-4 text-[11px] tracking-[0.28em] uppercase transition-all duration-300 hover:opacity-80"
-                  style={{ fontFamily: "var(--font-sans)", fontWeight: 400, color: "#ffffff", background: "var(--text)", border: "none", cursor: "pointer" }}
+                  className="w-full text-[11px] tracking-[0.28em] uppercase transition-all duration-300 hover:opacity-80"
+                  style={{ fontFamily: "var(--font-sans)", fontWeight: 400, color: "#ffffff", background: "var(--text)", border: "none", cursor: "pointer", padding: "20px 0" }}
                 >
                   Add to Cart
                 </button>
                 <button
-                  className="w-full py-4 text-[11px] tracking-[0.28em] uppercase transition-all duration-300 hover:bg-black hover:text-white"
-                  style={{ fontFamily: "var(--font-sans)", fontWeight: 400, color: "var(--text)", background: "transparent", border: "1px solid var(--text)", cursor: "pointer" }}
+                  className="w-full text-[11px] tracking-[0.28em] uppercase transition-all duration-300 hover:bg-black hover:text-white"
+                  style={{ fontFamily: "var(--font-sans)", fontWeight: 400, color: "var(--text)", background: "transparent", border: "1px solid var(--text)", cursor: "pointer", padding: "20px 0" }}
                 >
                   Buy Now
                 </button>
