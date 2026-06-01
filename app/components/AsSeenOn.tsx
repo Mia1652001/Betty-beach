@@ -24,7 +24,7 @@ export default function AsSeenOn() {
         className="text-[11px] tracking-[0.22em] uppercase"
         style={{ padding: "0 40px 0 20px", marginBottom: "16px", fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
       >
-        Tag <span style={{ color: "var(--text)" }}>@bettybeach</span> to be featured
+        Tag <span style={{ color: "var(--text)" }}>@bettybeachstudios</span> to be featured
       </p>
 
       {/* Full-width grid — 6 columns × 2 rows, no gaps */}
