@@ -53,6 +53,38 @@ const products = [
     tag: "Low Stock",
     src: "/product3.jpg",
   },
+  {
+    id: 7,
+    name: "Capri Bikini Set",
+    price: "$155",
+    category: "Swimwear",
+    tag: "New",
+    src: "/product 1.jpeg",
+  },
+  {
+    id: 8,
+    name: "Siena Wrap Dress",
+    price: "$195",
+    category: "Dresses",
+    tag: null,
+    src: "/product 2.jpg",
+  },
+  {
+    id: 9,
+    name: "Tropez Halter Top",
+    price: "$88",
+    category: "Swimwear",
+    tag: null,
+    src: "/hero2.jpg",
+  },
+  {
+    id: 10,
+    name: "Amalfi Linen Set",
+    price: "$265",
+    category: "Resort Wear",
+    tag: "Bestseller",
+    src: "/product 5.jpg",
+  },
 ];
 
 type Product = (typeof products)[0];
