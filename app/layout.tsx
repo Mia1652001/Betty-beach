@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bodoni_Moda, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "./context/CartContext";
 
 const bodoniModa = Bodoni_Moda({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${bodoniModa.variable} ${dmSans.variable}`}>
-      <body>{children}</body>
+      <body><CartProvider>{children}</CartProvider></body>
     </html>
   );
 }

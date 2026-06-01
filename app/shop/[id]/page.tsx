@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { useCart } from "../../context/CartContext";
 
 const products = [
   {
@@ -136,10 +137,29 @@ export default function ProductPage() {
   const params = useParams();
   const product = products.find((p) => p.id === Number(params.id));
 
+  const { addToCart } = useCart();
+  const router = useRouter();
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [quantity, setQuantity] = useState(1);
+  const [added, setAdded] = useState(false);
+
+  const handleAddToCart = () => {
+    if (!product) return;
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      src: product.images[0],
+      category: product.category,
+      color: selectedColor,
+      size: selectedSize,
+      quantity,
+    });
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);
+  };
 
   if (!product) {
     return (
@@ -313,12 +333,14 @@ export default function ProductPage() {
               {/* Buttons */}
               <div className="flex flex-col gap-2" style={{ marginBottom: "40px" }}>
                 <button
+                  onClick={handleAddToCart}
                   className="w-full text-[11px] tracking-[0.28em] uppercase transition-all duration-300 hover:opacity-80"
                   style={{ fontFamily: "var(--font-sans)", fontWeight: 400, color: "#ffffff", background: "var(--text)", border: "none", cursor: "pointer", padding: "20px 0" }}
                 >
-                  Add to Cart
+                  {added ? "Added!" : "Add to Cart"}
                 </button>
                 <button
+                  onClick={() => { handleAddToCart(); router.push("/cart"); }}
                   className="w-full text-[11px] tracking-[0.28em] uppercase transition-all duration-300 hover:bg-black hover:text-white"
                   style={{ fontFamily: "var(--font-sans)", fontWeight: 400, color: "var(--text)", background: "transparent", border: "1px solid var(--text)", cursor: "pointer", padding: "20px 0" }}
                 >

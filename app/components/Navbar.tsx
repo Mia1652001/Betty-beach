@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { useCart } from "../context/CartContext";
 
 const shopCategories = [
   { label: "Shop All",    href: "/shop" },
@@ -34,6 +35,7 @@ const drawerShopItems = [
 ];
 
 export default function Navbar() {
+  const { totalItems } = useCart();
   const [mobileOpen, setMobileOpen]     = useState(false);
   const [shopOpen, setShopOpen]         = useState(false);
   const [drawerOpen, setDrawerOpen]     = useState(false);
@@ -109,7 +111,7 @@ export default function Navbar() {
                 className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 flex items-center justify-center rounded-full text-white"
                 style={{ fontSize: "8px", background: "var(--text)", fontFamily: "var(--font-sans)" }}
               >
-                0
+                {totalItems}
               </span>
             </Link>
 
