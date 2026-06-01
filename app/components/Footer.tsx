@@ -50,7 +50,7 @@ export default function Footer() {
               className="text-[13px] leading-[1.8]"
               style={{ fontFamily: "var(--font-sans)", color: "var(--text-mid)", fontWeight: 300 }}
             >
-              Free shipping on your next Betty Beach order.
+              Free shipping on your next <span style={{ fontFamily: "var(--font-heading)", fontStyle: "italic" }}>Betty Beach</span> order.
             </p>
           </div>
 
@@ -107,7 +107,8 @@ export default function Footer() {
               <p
                 className="mb-7"
                 style={{
-                  fontFamily: "var(--font-sans)",
+                  fontFamily: "var(--font-heading)",
+                  fontStyle: "italic",
                   fontWeight: 400,
                   fontSize: "18px",
                   color: "var(--text)",
@@ -131,7 +132,9 @@ export default function Footer() {
                   className="text-[10px] tracking-[0.25em] uppercase mb-8"
                   style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
                 >
-                  {heading}
+                  {heading.includes("Betty Beach")
+                  ? <>{heading.replace("Betty Beach", "")}<span style={{ fontFamily: "var(--font-heading)", fontStyle: "italic" }}>Betty Beach</span></>
+                  : heading}
                 </p>
                 <ul className="space-y-4">
                   {links.map((link) => (
@@ -165,7 +168,7 @@ export default function Footer() {
             className="text-[10px] tracking-[0.12em]"
             style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
           >
-            © 2026, Betty Beach
+            © 2026, <span style={{ fontFamily: "var(--font-heading)", fontStyle: "italic" }}>Betty Beach</span>
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service"].map((item) => (
