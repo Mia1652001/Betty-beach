@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 const shopCategories = [
@@ -34,10 +34,19 @@ const drawerShopItems = [
 ];
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen]   = useState(false);
-  const [shopOpen, setShopOpen]       = useState(false);
-  const [drawerOpen, setDrawerOpen]   = useState(false);
+  const [mobileOpen, setMobileOpen]     = useState(false);
+  const [shopOpen, setShopOpen]         = useState(false);
+  const [drawerOpen, setDrawerOpen]     = useState(false);
   const [shopExpanded, setShopExpanded] = useState(false);
+  const [searchOpen, setSearchOpen]     = useState(false);
+  const [searchQuery, setSearchQuery]   = useState("");
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (searchOpen) {
+      searchInputRef.current?.focus();
+    }
+  }, [searchOpen]);
 
   return (
     <>
@@ -67,10 +76,14 @@ export default function Navbar() {
             Betty Beach
           </Link>
 
-{/* Right icons — desktop */}
+          {/* Right icons — desktop */}
           <div className="hidden md:flex items-center gap-6">
             {/* Search */}
-            <button aria-label="Search" className="hover:opacity-50 transition-opacity duration-200">
+            <button
+              aria-label="Search"
+              onClick={() => setSearchOpen(!searchOpen)}
+              className="hover:opacity-50 transition-opacity duration-200"
+            >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <circle cx="11" cy="11" r="7" />
                 <line x1="16.5" y1="16.5" x2="22" y2="22" />
@@ -122,6 +135,50 @@ export default function Navbar() {
             <span className={`block w-[22px] h-px bg-black transition-all duration-300 ${mobileOpen ? "opacity-0 scale-x-0" : ""}`} />
             <span className={`block w-[22px] h-px bg-black transition-all duration-300 origin-center ${mobileOpen ? "-rotate-45 -translate-y-[3px]" : ""}`} />
           </button>
+        </div>
+
+        {/* Search bar — slides down below navbar */}
+        <div
+          style={{
+            overflow: "hidden",
+            maxHeight: searchOpen ? "64px" : "0",
+            transition: "max-height 0.3s ease",
+            borderTop: searchOpen ? "1px solid var(--border)" : "none",
+          }}
+        >
+          <div className="flex items-center" style={{ padding: "0 40px", height: "64px", gap: "12px" }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ flexShrink: 0, opacity: 0.4 }}>
+              <circle cx="11" cy="11" r="7" />
+              <line x1="16.5" y1="16.5" x2="22" y2="22" />
+            </svg>
+            <input
+              ref={searchInputRef}
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search"
+              style={{
+                flex: 1,
+                border: "none",
+                outline: "none",
+                background: "transparent",
+                fontFamily: "var(--font-sans)",
+                fontSize: "13px",
+                letterSpacing: "0.08em",
+                color: "var(--text)",
+              }}
+            />
+            <button
+              onClick={() => { setSearchOpen(false); setSearchQuery(""); }}
+              aria-label="Close search"
+              className="hover:opacity-50 transition-opacity duration-200"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
         </div>
 
       </nav>
