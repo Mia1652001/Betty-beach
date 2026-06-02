@@ -292,7 +292,7 @@ export default function Navbar() {
         >
           Betty Beach
         </Link>
-        {[...navItems, { label: "Cart", href: "#", hasDropdown: false }].map((item) => (
+        {[...navItems, { label: "Cart", href: "/cart", hasDropdown: false }].map((item) => (
           <Link
             key={item.label}
             href={item.href}
