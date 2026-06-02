@@ -127,16 +127,42 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden flex flex-col justify-center gap-[5px] p-1 ml-auto"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className={`block w-[22px] h-px bg-black transition-all duration-300 origin-center ${mobileOpen ? "rotate-45 translate-y-[3px]" : ""}`} />
-            <span className={`block w-[22px] h-px bg-black transition-all duration-300 ${mobileOpen ? "opacity-0 scale-x-0" : ""}`} />
-            <span className={`block w-[22px] h-px bg-black transition-all duration-300 origin-center ${mobileOpen ? "-rotate-45 -translate-y-[3px]" : ""}`} />
-          </button>
+          {/* Mobile icons */}
+          <div className="md:hidden flex items-center gap-4 ml-auto">
+            {/* Profile */}
+            <Link href="/login" aria-label="Log in" className="hover:opacity-50 transition-opacity duration-200">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </Link>
+
+            {/* Cart */}
+            <Link href="/cart" aria-label="Cart" className="hover:opacity-50 transition-opacity duration-200 relative" style={{ display: "inline-flex" }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+              <span
+                className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 flex items-center justify-center rounded-full text-white"
+                style={{ fontSize: "8px", background: "var(--text)", fontFamily: "var(--font-sans)" }}
+              >
+                {totalItems}
+              </span>
+            </Link>
+
+            {/* Hamburger */}
+            <button
+              className="flex flex-col justify-center gap-[5px] p-1"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              <span className={`block w-[22px] h-px bg-black transition-all duration-300 origin-center ${mobileOpen ? "rotate-45 translate-y-[3px]" : ""}`} />
+              <span className={`block w-[22px] h-px bg-black transition-all duration-300 ${mobileOpen ? "opacity-0 scale-x-0" : ""}`} />
+              <span className={`block w-[22px] h-px bg-black transition-all duration-300 origin-center ${mobileOpen ? "-rotate-45 -translate-y-[3px]" : ""}`} />
+            </button>
+          </div>
         </div>
 
         {/* Search bar — slides down below navbar */}
