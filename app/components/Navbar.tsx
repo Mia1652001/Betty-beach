@@ -69,7 +69,7 @@ export default function Navbar() {
               fontStyle: "normal",
               fontWeight: 400,
               fontSize: "20px",
-              letterSpacing: "0.10em",
+              letterSpacing: "0.8em",
               color: "var(--text)",
               flexShrink: 0,
             }}
@@ -235,7 +235,7 @@ export default function Navbar() {
                 fontStyle: "normal",
                 fontWeight: 400,
                 fontSize: "18px",
-                letterSpacing: "0.10em",
+                letterSpacing: "0.8em",
                 color: "var(--text)",
               }}
             >
@@ -284,7 +284,7 @@ export default function Navbar() {
             fontStyle: "italic",
             fontWeight: 400,
             fontSize: "22px",
-            letterSpacing: "0.10em",
+            letterSpacing: "0.8em",
             color: "var(--text)",
           }}
           className="mb-6"
