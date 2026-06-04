@@ -40,7 +40,7 @@ export default function EditorialBanner() {
             fontSize: "clamp(40px, 6.5vw, 88px)",
             color: "#ffffff",
             lineHeight: 1.08,
-            letterSpacing: "0.10em",
+            letterSpacing: "0.08em",
           }}
         >
           Betty Beach
