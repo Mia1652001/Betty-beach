@@ -35,7 +35,7 @@ export default function EditorialBanner() {
         <h2
           style={{
             fontFamily: "var(--font-logo)",
-            fontStyle: "italic",
+            fontStyle: "normal",
             fontWeight: 400,
             fontSize: "clamp(40px, 6.5vw, 88px)",
             color: "#ffffff",

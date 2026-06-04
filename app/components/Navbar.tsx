@@ -66,7 +66,7 @@ export default function Navbar() {
             href="/"
             style={{
               fontFamily: "var(--font-logo)",
-              fontStyle: "italic",
+              fontStyle: "normal",
               fontWeight: 400,
               fontSize: "20px",
               letterSpacing: "0.12em",
@@ -232,7 +232,7 @@ export default function Navbar() {
               onClick={() => setDrawerOpen(false)}
               style={{
                 fontFamily: "var(--font-logo)",
-                fontStyle: "italic",
+                fontStyle: "normal",
                 fontWeight: 400,
                 fontSize: "18px",
                 letterSpacing: "0.12em",
