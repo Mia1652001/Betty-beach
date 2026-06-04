@@ -34,13 +34,13 @@ export default function EditorialBanner() {
 
         <h2
           style={{
-            fontFamily: "var(--font-heading)",
+            fontFamily: "var(--font-logo)",
             fontStyle: "italic",
             fontWeight: 400,
             fontSize: "clamp(40px, 6.5vw, 88px)",
             color: "#ffffff",
             lineHeight: 1.08,
-            letterSpacing: "0.02em",
+            letterSpacing: "0.12em",
           }}
         >
           Betty Beach

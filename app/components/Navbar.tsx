@@ -65,11 +65,11 @@ export default function Navbar() {
           <Link
             href="/"
             style={{
-              fontFamily: "var(--font-heading)",
+              fontFamily: "var(--font-logo)",
               fontStyle: "italic",
               fontWeight: 400,
               fontSize: "20px",
-              letterSpacing: "0.06em",
+              letterSpacing: "0.12em",
               color: "var(--text)",
               flexShrink: 0,
             }}
@@ -231,11 +231,11 @@ export default function Navbar() {
               href="/"
               onClick={() => setDrawerOpen(false)}
               style={{
-                fontFamily: "var(--font-heading)",
+                fontFamily: "var(--font-logo)",
                 fontStyle: "italic",
                 fontWeight: 400,
                 fontSize: "18px",
-                letterSpacing: "0.06em",
+                letterSpacing: "0.12em",
                 color: "var(--text)",
               }}
             >
@@ -284,7 +284,7 @@ export default function Navbar() {
             fontStyle: "italic",
             fontWeight: 400,
             fontSize: "22px",
-            letterSpacing: "0.08em",
+            letterSpacing: "0.12em",
             color: "var(--text)",
           }}
           className="mb-6"

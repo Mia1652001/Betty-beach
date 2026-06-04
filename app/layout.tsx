@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, DM_Sans } from "next/font/google";
+import { Bodoni_Moda, DM_Sans, EB_Garamond } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "./context/CartContext";
 
@@ -8,6 +8,14 @@ const bodoniModa = Bodoni_Moda({
   weight: ["400", "500", "700"],
   style: ["normal", "italic"],
   variable: "--font-heading",
+  display: "swap",
+});
+
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-logo",
   display: "swap",
 });
 
@@ -28,7 +36,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${bodoniModa.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${bodoniModa.variable} ${dmSans.variable} ${ebGaramond.variable}`}>
       <body><CartProvider>{children}</CartProvider></body>
     </html>
   );
