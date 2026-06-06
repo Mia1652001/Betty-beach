@@ -35,7 +35,7 @@ export default function Footer() {
           style={{ padding: "0 40px" }}
         >
           <div className="max-w-sm">
-            <BettyBeachLogo color="black" style={{ height: "36px", width: "auto", marginBottom: "20px" }} />
+            <BettyBeachLogo color="black" style={{ height: "56px", width: "auto", marginBottom: "20px" }} />
             <h3
               className="mb-6"
               style={{
