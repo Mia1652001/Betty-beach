@@ -54,6 +54,7 @@ export default function Footer() {
             >
               Free shipping on your next Betty Beach order.
             </p>
+            <div style={{ height: "40px" }} />
             {submitted ? (
               <p
                 className="text-[11px] tracking-[0.18em] uppercase py-4"
