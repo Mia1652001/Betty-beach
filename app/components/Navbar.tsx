@@ -64,7 +64,7 @@ export default function Navbar() {
         >
           {/* Logo — left */}
           <Link href="/" className="hover:opacity-60 transition-opacity duration-200" style={{ flexShrink: 0 }}>
-            <BettyBeachLogo color="black" style={{ height: "22px", width: "auto" }} />
+            <BettyBeachLogo color="black" style={{ height: "32px", width: "auto" }} />
           </Link>
 
           {/* Right icons — desktop */}
@@ -260,7 +260,7 @@ export default function Navbar() {
         style={{ background: "#ffffff" }}
       >
         <Link href="/" className="mb-6 hover:opacity-60 transition-opacity duration-200" onClick={() => setMobileOpen(false)}>
-          <BettyBeachLogo color="black" style={{ height: "22px", width: "auto" }} />
+          <BettyBeachLogo color="black" style={{ height: "32px", width: "auto" }} />
         </Link>
         {[...navItems, { label: "Cart", href: "/cart", hasDropdown: false }].map((item) => (
           <Link
