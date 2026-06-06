@@ -34,8 +34,8 @@ export default function Footer() {
           className="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-16"
           style={{ padding: "0 40px" }}
         >
+          {/* Left — heading + email form */}
           <div className="max-w-sm">
-            <BettyBeachLogo color="black" style={{ height: "56px", width: "auto", marginBottom: "20px" }} />
             <h3
               className="mb-6"
               style={{
@@ -49,14 +49,11 @@ export default function Footer() {
               Join the Family
             </h3>
             <p
-              className="text-[13px] leading-[1.8]"
+              className="text-[13px] leading-[1.8] mb-8"
               style={{ fontFamily: "var(--font-sans)", color: "var(--text-mid)", fontWeight: 300 }}
             >
               Free shipping on your next Betty Beach order.
             </p>
-          </div>
-
-          <div className="w-full md:max-w-sm">
             {submitted ? (
               <p
                 className="text-[11px] tracking-[0.18em] uppercase py-4"
@@ -92,6 +89,11 @@ export default function Footer() {
                 </button>
               </form>
             )}
+          </div>
+
+          {/* Right — logo */}
+          <div className="flex md:justify-end">
+            <BettyBeachLogo color="black" style={{ height: "56px", width: "auto" }} />
           </div>
         </div>
       </div>
