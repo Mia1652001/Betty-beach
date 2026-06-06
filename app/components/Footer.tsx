@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import BettyBeachLogo from "./BettyBeachLogo";
 
 const footerLinks = {
   "More Betty Beach": ["Our Story", "Search", "Contact", "Stockists", "Gift Cards"],
@@ -34,6 +35,7 @@ export default function Footer() {
           style={{ padding: "0 40px" }}
         >
           <div className="max-w-sm">
+            <BettyBeachLogo color="black" style={{ height: "36px", width: "auto", marginBottom: "20px" }} />
             <h3
               className="mb-6"
               style={{
@@ -44,7 +46,7 @@ export default function Footer() {
                 lineHeight: 1.1,
               }}
             >
-              Join the <span style={{ fontFamily: "var(--font-heading)", fontStyle: "italic" }}>Betty Beach</span> Family
+              Join the Family
             </h3>
             <p
               className="text-[13px] leading-[1.8]"
