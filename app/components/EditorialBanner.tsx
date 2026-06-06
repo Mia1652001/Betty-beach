@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import BettyBeachLogo from "./BettyBeachLogo";
 
 export default function EditorialBanner() {
   return (
@@ -32,19 +33,14 @@ export default function EditorialBanner() {
           New Drop
         </p>
 
-        <h2
+        <BettyBeachLogo
+          color="white"
           style={{
-            fontFamily: "var(--font-logo)",
-            fontStyle: "normal",
-            fontWeight: 400,
-            fontSize: "clamp(40px, 6.5vw, 88px)",
-            color: "#ffffff",
-            lineHeight: 1.08,
-            letterSpacing: "0.08em",
+            height: "clamp(40px, 6.5vw, 88px)",
+            width: "auto",
+            maxWidth: "80vw",
           }}
-        >
-          Betty Beach
-        </h2>
+        />
 
         <Link
           href="/shop"

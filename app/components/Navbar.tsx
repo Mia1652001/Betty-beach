@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
+import BettyBeachLogo from "./BettyBeachLogo";
 
 const shopCategories = [
   { label: "Shop All",    href: "/shop" },
@@ -62,20 +63,8 @@ export default function Navbar() {
           style={{ padding: "0 40px" }}
         >
           {/* Logo — left */}
-          <Link
-            href="/"
-            style={{
-              fontFamily: "var(--font-logo)",
-              fontStyle: "normal",
-              fontWeight: 400,
-              fontSize: "20px",
-              letterSpacing: "0.08em",
-              color: "var(--text)",
-              flexShrink: 0,
-            }}
-            className="hover:opacity-60 transition-opacity duration-200"
-          >
-            Betty Beach
+          <Link href="/" className="hover:opacity-60 transition-opacity duration-200" style={{ flexShrink: 0 }}>
+            <BettyBeachLogo color="black" style={{ height: "22px", width: "auto" }} />
           </Link>
 
           {/* Right icons — desktop */}
@@ -230,16 +219,9 @@ export default function Navbar() {
             <Link
               href="/"
               onClick={() => setDrawerOpen(false)}
-              style={{
-                fontFamily: "var(--font-logo)",
-                fontStyle: "normal",
-                fontWeight: 400,
-                fontSize: "18px",
-                letterSpacing: "0.08em",
-                color: "var(--text)",
-              }}
+              className="hover:opacity-60 transition-opacity duration-200"
             >
-              Betty Beach
+              <BettyBeachLogo color="black" style={{ height: "20px", width: "auto" }} />
             </Link>
             <button
               onClick={() => setDrawerOpen(false)}
@@ -277,20 +259,8 @@ export default function Navbar() {
         }`}
         style={{ background: "#ffffff" }}
       >
-        <Link
-          href="/"
-          style={{
-            fontFamily: "var(--font-heading)",
-            fontStyle: "italic",
-            fontWeight: 400,
-            fontSize: "22px",
-            letterSpacing: "0.08em",
-            color: "var(--text)",
-          }}
-          className="mb-6"
-          onClick={() => setMobileOpen(false)}
-        >
-          Betty Beach
+        <Link href="/" className="mb-6 hover:opacity-60 transition-opacity duration-200" onClick={() => setMobileOpen(false)}>
+          <BettyBeachLogo color="black" style={{ height: "22px", width: "auto" }} />
         </Link>
         {[...navItems, { label: "Cart", href: "/cart", hasDropdown: false }].map((item) => (
           <Link
