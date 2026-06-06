@@ -95,7 +95,7 @@ export default function Footer() {
 
           {/* Right — logo */}
           <div className="flex md:justify-end" style={{ color: "var(--text)", paddingRight: "60px" }}>
-            <BettyBeachStudiosLogo style={{ height: "100px" }} />
+            <BettyBeachStudiosLogo style={{ height: "120px" }} />
           </div>
         </div>
       </div>
