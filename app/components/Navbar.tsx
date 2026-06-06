@@ -65,7 +65,7 @@ export default function Navbar() {
         >
           {/* Logo — left */}
           <Link href="/" className="hover:opacity-60 transition-opacity duration-200" style={{ flexShrink: 0, color: "var(--text)" }}>
-            <BettyBeachStudiosLogo style={{ height: "48px" }} />
+            <BettyBeachStudiosLogo style={{ height: "43px" }} />
           </Link>
 
           {/* Right icons — desktop */}
