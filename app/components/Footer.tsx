@@ -31,7 +31,7 @@ export default function Footer() {
         style={{ borderColor: "var(--border)", padding: "120px 0" }}
       >
         <div
-          className="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-16"
+          className="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-16"
           style={{ padding: "0 40px" }}
         >
           <div className="max-w-sm">
