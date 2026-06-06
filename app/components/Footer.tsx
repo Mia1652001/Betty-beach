@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import BettyBeachLogo from "./BettyBeachLogo";
+import BettyBeachStudiosLogo from "./BettyBeachStudiosLogo";
 
 const footerLinks = {
   "More Betty Beach": ["Our Story", "Search", "Contact", "Stockists", "Gift Cards"],
@@ -93,8 +94,8 @@ export default function Footer() {
           </div>
 
           {/* Right — logo */}
-          <div className="flex md:justify-end">
-            <BettyBeachLogo color="black" style={{ height: "56px", width: "auto" }} />
+          <div className="flex md:justify-end" style={{ color: "var(--text)" }}>
+            <BettyBeachStudiosLogo style={{ height: "80px" }} />
           </div>
         </div>
       </div>
