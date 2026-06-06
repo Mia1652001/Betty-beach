@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
 import BettyBeachLogo from "./BettyBeachLogo";
+import BettyBeachStudiosLogo from "./BettyBeachStudiosLogo";
 
 const shopCategories = [
   { label: "Shop All",    href: "/shop" },
@@ -63,12 +64,8 @@ export default function Navbar() {
           style={{ padding: "0 40px" }}
         >
           {/* Logo — left */}
-          <Link href="/" className="hover:opacity-60 transition-opacity duration-200" style={{ flexShrink: 0 }}>
-            <img
-              src="/BettyBeachstudios.svg"
-              alt="Betty Beach Studios"
-              style={{ height: "32px", width: "auto", display: "block" }}
-            />
+          <Link href="/" className="hover:opacity-60 transition-opacity duration-200" style={{ flexShrink: 0, color: "var(--text)" }}>
+            <BettyBeachStudiosLogo style={{ height: "32px" }} />
           </Link>
 
           {/* Right icons — desktop */}
