@@ -36,7 +36,7 @@ export default function EditorialBanner() {
         <BettyBeachLogo
           color="white"
           style={{
-            height: "clamp(60px, 10vw, 140px)",
+            height: "clamp(80px, 14vw, 180px)",
             width: "auto",
             maxWidth: "85vw",
           }}
