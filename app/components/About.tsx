@@ -123,23 +123,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ background: "var(--sand-light)", padding: "120px 40px", textAlign: "center" }}>
-        <p style={{ fontFamily: "var(--font-sans)", fontSize: "10px", letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--text-light)", fontWeight: 400, marginBottom: "24px" }}>
-          Ready to explore?
-        </p>
-        <h2 style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", fontWeight: 400, fontSize: "clamp(28px, 4vw, 52px)", color: "var(--text)", lineHeight: 1.1, marginBottom: "48px" }}>
-          Shop the collection
-        </h2>
-        <Link
-          href="/shop"
-          style={{ fontFamily: "var(--font-sans)", fontSize: "11px", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--text)", border: "1px solid var(--text)", padding: "16px 48px", display: "inline-block", fontWeight: 400 }}
-          className="hover:bg-black hover:text-white transition-all duration-300"
-        >
-          Shop Now
-        </Link>
-      </section>
-
     </main>
   );
 }
