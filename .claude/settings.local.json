@@ -12,7 +12,8 @@
       "WebFetch(domain:indahclothing.com)",
       "Bash(git reset:*)",
       "Bash(git config:*)",
-      "WebFetch(domain:www.camiandjax.com)"
+      "WebFetch(domain:www.camiandjax.com)",
+      "WebFetch(domain:capalaswim.com)"
     ]
   }
 }
