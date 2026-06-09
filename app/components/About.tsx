@@ -32,35 +32,37 @@ export default function About() {
           {/* Text content */}
           <div className="order-2 md:order-none flex flex-col justify-center">
             <p
-              className="text-[9px] tracking-[0.42em] uppercase mb-8 font-light"
-              style={{ fontFamily: "var(--font-sans)", color: "var(--terracotta)" }}
+              className="text-[9px] tracking-[0.42em] uppercase font-light"
+              style={{ fontFamily: "var(--font-sans)", color: "var(--terracotta)", marginBottom: "32px" }}
             >
               Our Story
             </p>
             <h2
-              className="font-light leading-[1.05] mb-14"
+              className="font-light"
               style={{
                 fontFamily: "var(--font-cormorant)",
                 fontSize: "clamp(40px, 5vw, 68px)",
                 color: "var(--charcoal)",
+                lineHeight: 1.05,
+                marginBottom: "56px",
               }}
             >
               Made for the
               <br />
               <em className="italic">golden hour</em>
             </h2>
-            <div className="space-y-8">
+            <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
               <p
-                className="text-[13.5px] font-light leading-[1.9]"
-                style={{ fontFamily: "var(--font-sans)", color: "var(--warm-gray)" }}
+                className="text-[13.5px] font-light"
+                style={{ fontFamily: "var(--font-sans)", color: "var(--warm-gray)", lineHeight: 1.9 }}
               >
                 <span style={{ fontFamily: "var(--font-heading)", fontStyle: "italic" }}>Betty Beach</span> was born from long mornings on the water and the belief that what you
                 wear should feel as effortless as the places you wear it. We design for women who
                 move between worlds — the beach, the café, the cobblestone street.
               </p>
               <p
-                className="text-[13.5px] font-light leading-[1.9]"
-                style={{ fontFamily: "var(--font-sans)", color: "var(--warm-gray)" }}
+                className="text-[13.5px] font-light"
+                style={{ fontFamily: "var(--font-sans)", color: "var(--warm-gray)", lineHeight: 1.9 }}
               >
                 Every piece is thoughtfully crafted from sustainable fabrics, cut to flatter every
                 body, and designed to take you from sunrise to sunset. Because luxury is an intention
@@ -70,8 +72,8 @@ export default function About() {
 
             {/* Stats */}
             <div
-              className="flex gap-12 mt-16 pt-12"
-              style={{ borderTop: "1px solid var(--border)" }}
+              className="flex gap-12"
+              style={{ borderTop: "1px solid var(--border)", marginTop: "64px", paddingTop: "48px" }}
             >
               {[
                 { number: "2018", label: "Founded" },
