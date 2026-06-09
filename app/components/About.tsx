@@ -61,16 +61,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Pull quote */}
-      <section style={{ background: "var(--bg)", padding: "120px 40px" }}>
-        <div className="w-full max-w-[800px] mx-auto text-center">
-          <p style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", fontWeight: 400, fontSize: "clamp(22px, 3vw, 38px)", color: "var(--text)", lineHeight: 1.5, letterSpacing: "0.01em" }}>
-            &ldquo;Luxury is an intention — not a price point.&rdquo;
-          </p>
-        </div>
-      </section>
-
-      {/* Image + text — image right */}
+{/* Image + text — image right */}
       <section style={{ background: "var(--sand-light)", padding: "0" }}>
         <div className="grid grid-cols-1 md:grid-cols-2" style={{ minHeight: "600px" }}>
           <div className="flex flex-col justify-center order-2 md:order-1" style={{ padding: "80px 60px" }}>
