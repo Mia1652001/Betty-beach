@@ -32,13 +32,13 @@ export default function About() {
           {/* Text content */}
           <div className="order-2 md:order-none flex flex-col justify-center">
             <p
-              className="text-[9px] tracking-[0.42em] uppercase mb-5 font-light"
+              className="text-[9px] tracking-[0.42em] uppercase mb-8 font-light"
               style={{ fontFamily: "var(--font-sans)", color: "var(--terracotta)" }}
             >
               Our Story
             </p>
             <h2
-              className="font-light leading-[1.05] mb-9"
+              className="font-light leading-[1.05] mb-14"
               style={{
                 fontFamily: "var(--font-cormorant)",
                 fontSize: "clamp(40px, 5vw, 68px)",
@@ -49,7 +49,7 @@ export default function About() {
               <br />
               <em className="italic">golden hour</em>
             </h2>
-            <div className="space-y-5">
+            <div className="space-y-8">
               <p
                 className="text-[13.5px] font-light leading-[1.9]"
                 style={{ fontFamily: "var(--font-sans)", color: "var(--warm-gray)" }}
@@ -70,7 +70,7 @@ export default function About() {
 
             {/* Stats */}
             <div
-              className="flex gap-12 mt-12 pt-10"
+              className="flex gap-12 mt-16 pt-12"
               style={{ borderTop: "1px solid var(--border)" }}
             >
               {[
