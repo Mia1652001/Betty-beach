@@ -36,7 +36,7 @@ export default function Footer() {
           style={{ padding: "0 40px" }}
         >
           {/* Left — heading + email form */}
-          <div className="max-w-sm" style={{ marginTop: "60px" }}>
+          <div className="max-w-sm" style={{ marginTop: "40px" }}>
             <h3
               className="mb-6"
               style={{
