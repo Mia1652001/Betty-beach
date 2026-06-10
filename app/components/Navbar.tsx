@@ -64,7 +64,7 @@ export default function Navbar() {
           style={{ padding: "0 40px" }}
         >
           {/* Logo — left */}
-          <Link href="/" className="hover:opacity-60 transition-opacity duration-200" style={{ flexShrink: 0, color: "var(--text)" }}>
+          <Link href="/" className="hover:opacity-60 transition-opacity duration-200" style={{ flexShrink: 0, color: "var(--text)", marginTop: "6px" }}>
             <BettyBeachStudiosLogo style={{ height: "43px" }} />
           </Link>
 
