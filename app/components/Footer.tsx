@@ -45,7 +45,7 @@ export default function Footer() {
             <h3
               className="mb-6"
               style={{
-                fontFamily: "var(--font-heading)",
+                fontFamily: "var(--font-sans)",
                 fontWeight: 400,
                 fontSize: "clamp(24px, 3vw, 36px)",
                 color: "var(--text)",
