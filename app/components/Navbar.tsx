@@ -222,7 +222,7 @@ export default function Navbar() {
               onClick={() => setDrawerOpen(false)}
               className="hover:opacity-60 transition-opacity duration-200"
             >
-              <BettyBeachLogo color="black" style={{ height: "32px", width: "auto" }} />
+              <BettyBeachLogo color="black" style={{ height: "42px", width: "auto", marginTop: "8px" }} />
             </Link>
             <button
               onClick={() => setDrawerOpen(false)}
