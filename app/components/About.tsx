@@ -26,7 +26,7 @@ export default function About() {
 
       {/* Intro — centered text */}
       <section style={{ background: "var(--bg)", padding: "120px 40px" }}>
-        <div className="w-full max-w-[720px] mx-auto text-center">
+        <div className="w-full max-w-[720px] mx-auto text-center" style={{ paddingLeft: "40px" }}>
           <p style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(15px, 2vw, 18px)", color: "var(--text-mid)", fontWeight: 300, lineHeight: 2, letterSpacing: "0.01em" }}>
             Betty Beach was born from long mornings on the water and the belief that what you wear should feel as effortless as the places you wear it. We design for women who move between worlds — the beach, the café, the cobblestone street.
           </p>
