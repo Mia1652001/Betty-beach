@@ -28,7 +28,7 @@ export default function CartPage() {
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <path d="M16 10a4 4 0 0 1-8 0" />
               </svg>
-              <p className="mb-10 text-[13px]" style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 300 }}>
+              <p className="text-[13px]" style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 300, marginBottom: "40px" }}>
                 Your cart is empty
               </p>
               <Link
