@@ -100,30 +100,7 @@ export default function Footer() {
           className="w-full max-w-[1440px] mx-auto"
           style={{ padding: "0 40px" }}
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-16 md:gap-14">
-
-            {/* Brand column */}
-            <div className="col-span-2 md:col-span-1">
-              <p
-                className="mb-7"
-                style={{
-                  fontFamily: "var(--font-heading)",
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                  fontSize: "18px",
-                  color: "var(--text)",
-                  letterSpacing: "0.05em",
-                }}
-              >
-                Betty Beach
-              </p>
-              <p
-                className="text-[13px] leading-[1.8] max-w-[200px]"
-                style={{ fontFamily: "var(--font-sans)", color: "var(--text-mid)", fontWeight: 300 }}
-              >
-                Elevated swimwear and resort wear. Made with intention, worn with freedom.
-              </p>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-16 md:gap-14">
 
             {/* Link columns */}
             {Object.entries(footerLinks).map(([heading, links]) => (
