@@ -24,7 +24,7 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" style={{ background: "var(--bg)", borderTop: "1px solid var(--border)" }}>
+    <footer id="contact" style={{ background: "var(--bg)" }}>
 
       {/* Newsletter section */}
       <div
