@@ -42,7 +42,7 @@ export default function Footer() {
               style={{
                 fontFamily: "var(--font-sans)",
                 fontWeight: 300,
-                fontSize: "clamp(24px, 3vw, 36px)",
+                fontSize: "clamp(18px, 2.2vw, 28px)",
                 color: "var(--text)",
                 lineHeight: 1.1,
               }}
