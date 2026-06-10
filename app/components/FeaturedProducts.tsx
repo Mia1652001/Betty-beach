@@ -128,12 +128,6 @@ function ProductCard({ product }: { product: Product }) {
 
       {/* Product info */}
       <div className="mt-5">
-        <p
-          className="text-[9px] tracking-[0.22em] uppercase mb-2"
-          style={{ fontFamily: "var(--font-sans)", color: "var(--text-light)", fontWeight: 400 }}
-        >
-          {product.category}
-        </p>
         <div className="flex items-baseline justify-between gap-3">
           <h3
             className="text-[15px] leading-snug"
