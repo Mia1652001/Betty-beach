@@ -21,14 +21,7 @@ export default function CartPage() {
       <section style={{ background: "var(--bg)", padding: "80px 0 140px" }}>
         <div className="w-full max-w-[1100px] mx-auto" style={{ padding: "0 40px" }}>
 
-          <h1
-            className="mb-14"
-            style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", fontWeight: 400, fontSize: "clamp(28px, 4vw, 46px)", color: "var(--text)", lineHeight: 1.1 }}
-          >
-            Your Cart {totalItems > 0 && <span style={{ fontFamily: "var(--font-sans)", fontStyle: "normal", fontSize: "14px", color: "var(--text-light)", fontWeight: 300 }}>({totalItems} {totalItems === 1 ? "item" : "items"})</span>}
-          </h1>
-
-          {cart.length === 0 ? (
+{cart.length === 0 ? (
             <div className="flex flex-col items-center" style={{ paddingTop: "60px", paddingBottom: "80px" }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" style={{ opacity: 0.25, marginBottom: "24px" }}>
                 <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
