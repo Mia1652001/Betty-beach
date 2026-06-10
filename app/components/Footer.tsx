@@ -49,12 +49,6 @@ export default function Footer() {
             >
               Join the Family
             </h3>
-            <p
-              className="text-[13px] leading-[1.8] mb-8"
-              style={{ fontFamily: "var(--font-sans)", color: "var(--text-mid)", fontWeight: 300 }}
-            >
-              Free shipping on your next Betty Beach order.
-            </p>
             <div style={{ height: "40px" }} />
             {submitted ? (
               <p
