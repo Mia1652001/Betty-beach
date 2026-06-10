@@ -47,7 +47,7 @@ export default function Footer() {
                 lineHeight: 1.1,
               }}
             >
-              Join the Family
+              Join the Family and get 10% off your next order
             </h3>
             <div style={{ height: "40px" }} />
             {submitted ? (
