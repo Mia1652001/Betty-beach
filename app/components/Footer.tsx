@@ -41,7 +41,7 @@ export default function Footer() {
               className="mb-6"
               style={{
                 fontFamily: "var(--font-sans)",
-                fontWeight: 400,
+                fontWeight: 300,
                 fontSize: "clamp(24px, 3vw, 36px)",
                 color: "var(--text)",
                 lineHeight: 1.1,
