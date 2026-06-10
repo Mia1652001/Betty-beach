@@ -35,12 +35,7 @@ export default function Footer() {
           className="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-16"
           style={{ padding: "0 40px" }}
         >
-          {/* Left — logo */}
-          <div className="flex justify-center md:justify-start" style={{ color: "var(--text)", paddingLeft: "60px" }}>
-            <BettyBeachStudiosLogo style={{ height: "150px" }} />
-          </div>
-
-          {/* Right — heading + email form */}
+          {/* Left — heading + email form */}
           <div className="max-w-sm" style={{ marginTop: "40px" }}>
             <h3
               className="mb-6"
@@ -90,6 +85,11 @@ export default function Footer() {
                 </button>
               </form>
             )}
+          </div>
+
+          {/* Right — logo */}
+          <div className="flex justify-center pl-20 md:pl-0 md:justify-end" style={{ color: "var(--text)", paddingRight: "60px" }}>
+            <BettyBeachStudiosLogo style={{ height: "150px" }} />
           </div>
         </div>
       </div>
