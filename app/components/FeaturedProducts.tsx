@@ -149,7 +149,7 @@ function ProductCard({ product }: { product: Product }) {
 
 export default function FeaturedProducts() {
   return (
-    <section id="shop" style={{ background: "var(--bg)", padding: "140px 0" }}>
+    <section id="shop" style={{ background: "var(--bg)", padding: "60px 0 140px" }}>
       <div className="w-full max-w-[1440px] mx-auto" style={{ padding: "0 40px" }}>
 
         {/* Section header */}
