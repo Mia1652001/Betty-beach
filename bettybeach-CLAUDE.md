@@ -19,11 +19,23 @@ Betty Beach is a swimwear/bikini brand website. Built with Next.js, TypeScript, 
 
 ### Mac Terminal
 
-cd \~/my-website          \# go to this project git add . git commit \-m "message" git push                 \# deploys automatically to Vercel
+cd \~/my-website          \# go to this project
+
+git add .
+
+git commit \-m "message"
+
+git push                 \# deploys automatically to Vercel
 
 ### Claude Code (run inside \~/my-website)
 
-npm run dev              \# start dev server at localhost:3000 npm run build            \# check for build errors before pushing npm run lint             \# check for code errors npm install \# add a new package
+npm run dev              \# start dev server at localhost:3000
+
+npm run build            \# check for build errors before pushing
+
+npm run lint             \# check for code errors
+
+npm install \<package\>    \# add a new package
 
 ---
 
@@ -40,7 +52,7 @@ Betty Beach is a sun-drenched, feminine swimwear brand for confident women who d
 | Cream | `#FAF7F2` | Page backgrounds, light sections |
 | Near-black | `#1C1C1A` | Body text, dark elements, navbar |
 | Terracotta | `#C4603A` | Warm accents, CTAs, highlights |
-| Teal | `#3D6B60` | Cool accents, hover states, tags |
+| Teal | `#4A8C8C` | Cool accents, hover states, tags |
 
 **Rules:**
 
@@ -53,7 +65,17 @@ Betty Beach is a sun-drenched, feminine swimwear brand for confident women who d
 
 Add these to `tailwind.config.ts` if not already there:
 
-colors: { cream: '\#FAF7F2', nearblack: '\#1C1C1A', terracotta: '\#C4603A', teal: '\#3D6B60', }
+colors: {
+
+  cream: '\#FAF7F2',
+
+  nearblack: '\#1C1C1A',
+
+  terracotta: '\#C4603A',
+
+  teal: '\#4A8C8C',
+
+}
 
 ### Typography
 
@@ -81,7 +103,25 @@ colors: { cream: '\#FAF7F2', nearblack: '\#1C1C1A', terracotta: '\#C4603A', teal
 
 ## Project Structure
 
-/app /components       ← reusable UI components (Navbar, Footer, ProductCard, etc.) /lib              ← helper functions and mock product data /shop             ← product listing page /product/\[id\]     ← individual product page /cart             ← cart page layout.tsx        ← root layout (Navbar and Footer go here) page.tsx          ← homepage /public             ← images, fonts, brand assets CLAUDE.md           ← this file
+/app
+
+  /components       ← reusable UI components (Navbar, Footer, ProductCard, etc.)
+
+  /lib              ← helper functions and mock product data
+
+  /shop             ← product listing page
+
+  /product/\[id\]     ← individual product page
+
+  /cart             ← cart page
+
+  layout.tsx        ← root layout (Navbar and Footer go here)
+
+  page.tsx          ← homepage
+
+/public             ← images, fonts, brand assets
+
+CLAUDE.md           ← this file
 
 ## Shop & Products
 
@@ -89,7 +129,27 @@ colors: { cream: '\#FAF7F2', nearblack: '\#1C1C1A', terracotta: '\#C4603A', teal
 - Categories: Bikini Tops, Bikini Bottoms, One Pieces, Cover Ups  
 - Mock product shape:
 
-{ id: '1', name: 'Product Name', price: 89.00, images: \['/images/product-1-front.jpg', '/images/product-1-back.jpg'\], description: 'Short editorial description.', category: 'bikini-tops' | 'bikini-bottoms' | 'one-pieces' | 'cover-ups', sizes: \['XS', 'S', 'M', 'L', 'XL'\], colors: \['Black', 'White', 'Terracotta'\], inStock: true, }
+{
+
+  id: '1',
+
+  name: 'Product Name',
+
+  price: 89.00,
+
+  images: \['/images/product-1-front.jpg', '/images/product-1-back.jpg'\],
+
+  description: 'Short editorial description.',
+
+  category: 'bikini-tops' | 'bikini-bottoms' | 'one-pieces' | 'cover-ups',
+
+  sizes: \['XS', 'S', 'M', 'L', 'XL'\],
+
+  colors: \['Black', 'White', 'Terracotta'\],
+
+  inStock: true,
+
+}
 
 ## Code Conventions
 
@@ -100,35 +160,9 @@ colors: { cream: '\#FAF7F2', nearblack: '\#1C1C1A', terracotta: '\#C4603A', teal
 - **Comments:** short comment above every function explaining what it does  
 - Always handle **loading** and **error** states
 
-## Behavior — Make Only the Change I Ask For
-
-- Never change images, fonts, layout, or other components unless specifically asked.  
-- Only make the exact change requested. Do not refactor, reformat, or improve anything else.
-
-## Skills
-
-### Shopify Integration
-
-- Know how to connect products to Shopify and add buy buttons.  
-- Use the Shopify Storefront API or Buy SDK to embed product/cart functionality.
-
-### SEO
-
-- Add a meta title and description to every page using Next.js `metadata` exports.  
-- Every `<Image>` must have a descriptive `alt` attribute.
-
-### Image Optimization
-
-- Compress and optimize images before adding them to the site.  
-- Use the Next.js `<Image>` component for automatic optimization where possible.
-
-### Analytics
-
-- Know how to set up Google Analytics 4 (GA4) to track visitors, via the `gtag.js` script or a Next.js-compatible package.
-
 ## Important — Do Not Touch
 
-- The existing auto-push and Vercel deploy setup  
+- The existing auto-push and Vercel deploy-hook setup  
 - Do not overwrite or break the existing deploy configuration
 
 ## Progress Tracker
@@ -139,7 +173,7 @@ colors: { cream: '\#FAF7F2', nearblack: '\#1C1C1A', terracotta: '\#C4603A', teal
 - [x] Tailwind configured  
 - [x] Site mostly built and styled  
 - [x] Live at bettybeachstudios.com  
-- [x] Auto-push and deploy set up
+- [x] Auto-push and deploy hook set up
 
 ### In Progress
 
